@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 01, 2020 at 09:09 AM
+-- Generation Time: Sep 02, 2020 at 12:00 AM
 -- Server version: 10.1.26-MariaDB
 -- PHP Version: 7.1.8
 
@@ -45,6 +45,58 @@ INSERT INTO `admin` (`admin_id`, `email`, `password`, `profile`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `airportservices`
+--
+
+CREATE TABLE `airportservices` (
+  `id` int(11) NOT NULL,
+  `carId` int(11) DEFAULT NULL,
+  `driveType` varchar(255) DEFAULT NULL,
+  `numberOfpickups` varchar(100) DEFAULT NULL,
+  `picDate` varchar(255) DEFAULT NULL,
+  `names` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `phoneNumber` varchar(255) DEFAULT NULL,
+  `bookingNumber` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `airportservices`
+--
+
+INSERT INTO `airportservices` (`id`, `carId`, `driveType`, `numberOfpickups`, `picDate`, `names`, `email`, `phoneNumber`, `bookingNumber`) VALUES
+(1, 4, 'no', 'Pickup Three', '09/22/2020', 'Rene MUCYO TUYISENGE', 'renemucyomucici@gmail.com', '0784494820', '#4078449482009/22/2020');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `carrentbookings`
+--
+
+CREATE TABLE `carrentbookings` (
+  `id` int(11) NOT NULL,
+  `numberOfCars` varchar(100) DEFAULT NULL,
+  `datePickedUp` varchar(100) DEFAULT NULL,
+  `numberOfDropOffs` varchar(100) DEFAULT NULL,
+  `dateReturned` varchar(100) DEFAULT NULL,
+  `names` varchar(100) DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  `phoneNumber` varchar(100) DEFAULT NULL,
+  `streetNumber` varchar(100) DEFAULT NULL,
+  `bookingCode` varchar(100) DEFAULT NULL,
+  `carId` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `carrentbookings`
+--
+
+INSERT INTO `carrentbookings` (`id`, `numberOfCars`, `datePickedUp`, `numberOfDropOffs`, `dateReturned`, `names`, `email`, `phoneNumber`, `streetNumber`, `bookingCode`, `carId`) VALUES
+(1, 'Pickup Two', '09/10/2020', 'Drop off Two', '09/26/2020', 'Rene MUCYO TUYISENGE', 'renemucyomucici@gmail.com', '0784494820', 'INTWALI', '#09/26/2020078449482009/10/2020', 8);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `car_rent`
 --
 
@@ -73,12 +125,38 @@ CREATE TABLE `car_rent` (
 --
 
 INSERT INTO `car_rent` (`carId`, `carName`, `carTransimission`, `carAirCondition`, `carSeats`, `kmPerLitre`, `doors`, `fuelType`, `carPrice`, `carType`, `carDesc`, `thumbnail`, `photo1`, `photo2`, `photo3`, `photo4`, `photo5`) VALUES
-(1, 'hyundai_tucson', 'Manual', 'Yes', 5, 70, 5, 'Fuel', 70000, 'Medium', 'Just for traveling with family at high zones', 'Tucson.jpg', '21cc7af6-9-91c0.jpg', '2005-hyundai-tucson-gls-2-7l-4wd-front-interior.jpg', 'Tucson.jpg', '21cc7af6-9-91c0.jpg', '2005-hyundai-tucson-gls-2-7l-4wd-front-interior.jpg'),
 (2, 'HONDA', 'Manual', 'Yes', 8, 69, 5, 'Diesel', 120000, 'Large', 'This is car mostly rent by people for America, where it\' s popular at their zone', 'honda1.jpg', 'honda2.jpg', 'honda3.jpg', 'honda4.jpg', 'honda3.jpg', 'honda6.jpg'),
 (3, 'Landcruser V8', 'Automatic', 'Yes', 10, 70, 6, 'Diesel', 170000, 'Large', 'Best and VIP CAR suitable for Rwanda and other officials from outside,', 'landcruserV84.jpg', 'landcruserV82.jpg', 'landcruserV81.jpg', 'landcruserV84.jpg', 'landcruserV85.jpg', 'landcruserV82.jpg'),
 (4, 'RAVA 4 BLUE', 'Automatic', 'Yes', 4, 45, 5, 'Fuel', 50000, 'Premium', 'Yes premium', 'blue3.jpg', 'blue1.jpg', 'blue2.jpg', 'blue3.jpg', 'blue4.jpg', 'blue4.jpg'),
-(5, 'TOYOTA COROLLA VERSO mini MPV_5_2004', 'Both', 'No', 4, 124, 4, 'Fuel', 35000, 'Small', 'Small Car to travel with your family sans problem', 'TOYOTA-Corolla-Verso-647_26.jpg', 'TOYOTA_COROLLA VERSO_mini MPV_5_2004.jpg', 'Colora verso.jpg', 'TOYOTA-Corolla-Verso-647_29.jpg', 'TOYOTA-Corolla-Verso-647_26.jpg', 'TOYOTA_COROLLA VERSO_mini MPV_5_2004.jpg'),
-(6, 'Corolla Altis', 'Manual', 'No', 4, 140, 4, 'Diesel', 64981, 'Small', 'Yes there iso', 'd687725d-b-17d2.jpg', '04812041990003.jpg', '04812041990003.jpg', 'd9feb204-4-d36e.jpg', 'd687725d-b-17d2.jpg', '$0');
+(5, 'TOYOTA COROLLA VERSO mini MPV_5_2004', 'Manual', '', 4, 124, 4, '', 35000, 'Small', 'Small Car to travel with your family sans problem', 'Colora verso.jpg', 'TOYOTA_COROLLA VERSO_mini MPV_5_2004.jpg', 'TOYOTA-Corolla-Verso-647_26.jpg', 'TOYOTA-Corolla-Verso-647_29.jpg', 'TOYOTA_COROLLA VERSO_mini MPV_5_2004.jpg', 'Colora verso.jpg'),
+(7, 'Corolla Altis', 'Automatic', 'Yes', 4, 35, 5, 'Diesel', 60000, 'Medium', 'Great voiture for fam', 'd687725d-b-17d2.jpg', '04812041990003.jpg', 'altis1.jpg', 'd9feb204-4-d36e.jpg', 'd687725d-b-17d2.jpg', '04812041990003.jpg'),
+(8, 'TXR', 'Automatic', '', 10, 70, 6, '', 119981, 'Premium', 'VIP CAR FOR OFFICIAL', 'txr_thumb.jpg', 'txr_3.jpg', 'txr_2.jpg', 'txr_4.jpg', 'txr_1.jpg', 'txr_3.jpg'),
+(9, 'RAV4 2004 black', 'Automatic', 'Yes', 4, 89, 5, 'Fuel', 77000, 'Medium', 'Hello Rava we want you', '1.jpg', '6.jpg', '4.jfif', '2.jpg', '3.jpg', '5.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `contact`
+--
+
+CREATE TABLE `contact` (
+  `id` int(11) NOT NULL,
+  `names` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `subject` varchar(255) DEFAULT NULL,
+  `message` varchar(255) DEFAULT NULL,
+  `sentAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `contact`
+--
+
+INSERT INTO `contact` (`id`, `names`, `email`, `subject`, `message`, `sentAt`) VALUES
+(1, 'Rene MUCYO TUYISENGE', 'renemucyomucici@gmail.com', 'Yello rwanda', 'Hi Rwanda we love you', '0000-00-00 00:00:00'),
+(2, 'Mungu', 'kc2@gmail.com', 'Failed to book', 'hello i tried to click book, but failed', '0000-00-00 00:00:00'),
+(3, 'Toxxy', 'bthrey@gmail.rw', 'Feedback about web', 'Hello your web looks freat', '0000-00-00 00:00:00'),
+(4, 'Serge Neg-J', 'serge@gmail.rw', 'Your domain looks like hucked', 'Hello i checked and reviewd your domain has a big issues.', '0000-00-00 00:00:00');
 
 --
 -- Indexes for dumped tables
@@ -91,10 +169,30 @@ ALTER TABLE `admin`
   ADD PRIMARY KEY (`admin_id`);
 
 --
+-- Indexes for table `airportservices`
+--
+ALTER TABLE `airportservices`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `carFk` (`carId`);
+
+--
+-- Indexes for table `carrentbookings`
+--
+ALTER TABLE `carrentbookings`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `carFks` (`carId`);
+
+--
 -- Indexes for table `car_rent`
 --
 ALTER TABLE `car_rent`
   ADD PRIMARY KEY (`carId`);
+
+--
+-- Indexes for table `contact`
+--
+ALTER TABLE `contact`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -106,10 +204,41 @@ ALTER TABLE `car_rent`
 ALTER TABLE `admin`
   MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
+-- AUTO_INCREMENT for table `airportservices`
+--
+ALTER TABLE `airportservices`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `carrentbookings`
+--
+ALTER TABLE `carrentbookings`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
 -- AUTO_INCREMENT for table `car_rent`
 --
 ALTER TABLE `car_rent`
-  MODIFY `carId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;COMMIT;
+  MODIFY `carId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+--
+-- AUTO_INCREMENT for table `contact`
+--
+ALTER TABLE `contact`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `airportservices`
+--
+ALTER TABLE `airportservices`
+  ADD CONSTRAINT `carFk` FOREIGN KEY (`carId`) REFERENCES `car_rent` (`carId`);
+
+--
+-- Constraints for table `carrentbookings`
+--
+ALTER TABLE `carrentbookings`
+  ADD CONSTRAINT `carFks` FOREIGN KEY (`carId`) REFERENCES `car_rent` (`carId`);
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
