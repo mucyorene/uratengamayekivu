@@ -50,6 +50,8 @@
 		
 		<!-- Responsive CSS -->
 		<link rel="stylesheet" type="text/css" href="assets/css/responsive.css" media="all" />
+		<!-- Social medias -->
+		<link rel="stylesheet" href="assets/css/social.css">
 	</head>
 <body>
 	<div id="myModal" class="modal fade" role="dialog">
@@ -146,12 +148,11 @@
 												</div>
 											</div>
 											<div class="feature-middle">
-												<span><i class="icofont-car"></i><?= $rowPre['carName']?></span>
-												<span><i class="icofont icofont-company"></i><?= $rowPre['carTransimission']?></span>
-												<span><i class="icofont icofont-glue-oil"></i><?= $rowPre['kmPerLitre']?></span>
-												<span><i class="icofont icofont-paper-plane"></i><?= $rowPre['carSeats']?></span>
-												<span><i class="icofont icofont-energy-water"></i><?= $rowPre['carAirCondition']?></span>
-												<span><i class="icofont icofont-dollar"></i>From <b><?= $rowPre['carPrice']?></i></b></span>
+													<span><i class="icofont icofont-company"></i><?= $rowPre['carTransimission']?></span>
+													<span><i class="icofont icofont-glue-oil"></i><?= $rowPre['kmPerLitre']?> KM/L</span>
+													<span><i class="icofont icofont-paper-plane"></i><?= $rowPre['carSeats']?> Seats</span>
+													<span><i class="icofont icofont-energy-water"></i><?= $rowPre['carAirCondition']?></span>
+													<span><i class="icofont icofont-dollar"></i>From <?= $rowPre['carPrice']?></i>$</span>
 												<!-- <label class="text-danger text-uppercase text-bold text-center">Available </label> -->
 											</div>
 											<div class="feature-bottom text-uppercase">
@@ -198,12 +199,11 @@
 													</div>
 												</div>
 												<div class="feature-middle">
-													<span><i class="icofont-car"></i><?= $rowPre['carName']?></span>
 													<span><i class="icofont icofont-company"></i><?= $rowPre['carTransimission']?></span>
-													<span><i class="icofont icofont-glue-oil"></i><?= $rowPre['kmPerLitre']?></span>
-													<span><i class="icofont icofont-paper-plane"></i><?= $rowPre['carSeats']?></span>
+													<span><i class="icofont icofont-glue-oil"></i><?= $rowPre['kmPerLitre']?> KM/L</span>
+													<span><i class="icofont icofont-paper-plane"></i><?= $rowPre['carSeats']?> Seats</span>
 													<span><i class="icofont icofont-energy-water"></i><?= $rowPre['carAirCondition']?></span>
-													<span><i class="icofont icofont-dollar"></i>From <b><?= $rowPre['carPrice']?></i></b></span>
+													<span><i class="icofont icofont-dollar"></i>From <?= $rowPre['carPrice']?></i>$</span>
 													<!-- <label class="text-danger text-uppercase text-bold text-center">Available </label> -->
 												</div>
 												<div class="feature-bottom text-uppercase">
@@ -249,12 +249,11 @@
 												</div>
 											</div>
 											<div class="feature-middle">
-												<span><i class="icofont-car"></i><?= $rowPre['carName']?></span>
-												<span><i class="icofont icofont-company"></i><?= $rowPre['carTransimission']?></span>
-												<span><i class="icofont icofont-glue-oil"></i><?= $rowPre['kmPerLitre']?></span>
-												<span><i class="icofont icofont-paper-plane"></i><?= $rowPre['carSeats']?></span>
-												<span><i class="icofont icofont-energy-water"></i><?= $rowPre['carAirCondition']?></span>
-												<span><i class="icofont icofont-dollar"></i>From <b><?= $rowPre['carPrice']?></i></b></span>
+													<span><i class="icofont icofont-company"></i><?= $rowPre['carTransimission']?></span>
+													<span><i class="icofont icofont-glue-oil"></i><?= $rowPre['kmPerLitre']?> KM/L</span>
+													<span><i class="icofont icofont-paper-plane"></i><?= $rowPre['carSeats']?> Seats</span>
+													<span><i class="icofont icofont-energy-water"></i><?= $rowPre['carAirCondition']?></span>
+													<span><i class="icofont icofont-dollar"></i>From <?= $rowPre['carPrice']?></i>$</span>
 												<!-- <label class="text-danger text-uppercase text-bold text-center">Available </label> -->
 											</div>
 											<div class="feature-bottom text-uppercase">
@@ -301,12 +300,11 @@
 													</div>
 												</div>
 												<div class="feature-middle">
-													<span><i class="icofont-car"></i><?= $rowPre['carName']?></span>
 													<span><i class="icofont icofont-company"></i><?= $rowPre['carTransimission']?></span>
-													<span><i class="icofont icofont-glue-oil"></i><?= $rowPre['kmPerLitre']?></span>
-													<span><i class="icofont icofont-paper-plane"></i><?= $rowPre['carSeats']?></span>
+													<span><i class="icofont icofont-glue-oil"></i><?= $rowPre['kmPerLitre']?> KM/L</span>
+													<span><i class="icofont icofont-paper-plane"></i><?= $rowPre['carSeats']?> Seats</span>
 													<span><i class="icofont icofont-energy-water"></i><?= $rowPre['carAirCondition']?></span>
-													<span><i class="icofont icofont-dollar"></i>From <b><?= $rowPre['carPrice']?></i></b></span>
+													<span><i class="icofont icofont-dollar"></i>From <b><?= $rowPre['carPrice']?></i></b>$</span>
 													<!-- <label class="text-danger text-uppercase text-bold text-center">Available </label> -->
 												</div>
 												<div class="feature-bottom text-uppercase">
@@ -333,7 +331,6 @@
 	</div>
 	</section>
 
-		
 	</body>
 
 <!-- service110:28  -->
@@ -342,20 +339,20 @@
 				<?php require_once("inc/footer.php");?>
 			<!-- End footer Area -->
 <script src="js/vendor/jquery-2.2.4.min.js"></script>
-			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-			<script src="js/vendor/bootstrap.min.js"></script>			
-			<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>
-			<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>			
-  			<script src="js/easing.min.js"></script>			
-			<script src="js/hoverIntent.js"></script>
-			<script src="js/superfish.min.js"></script>	
-			<script src="js/jquery.ajaxchimp.min.js"></script>
-			<script src="js/jquery.magnific-popup.min.js"></script>	
-			<script src="js/owl.carousel.min.js"></script>			
-			<script src="js/jquery.sticky.js"></script>
-			<script src="js/jquery.nice-select.min.js"></script>	
-			<script src="js/waypoints.min.js"></script>
-			<script src="js/jquery.counterup.min.js"></script>					
-			<script src="js/parallax.min.js"></script>		
-			<script src="js/mail-script.js"></script>	
-			<script src="js/main.js"></script>	
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="js/vendor/bootstrap.min.js"></script>			
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>			
+<script src="js/easing.min.js"></script>			
+<script src="js/hoverIntent.js"></script>
+<script src="js/superfish.min.js"></script>	
+<script src="js/jquery.ajaxchimp.min.js"></script>
+<script src="js/jquery.magnific-popup.min.js"></script>	
+<script src="js/owl.carousel.min.js"></script>			
+<script src="js/jquery.sticky.js"></script>
+<script src="js/jquery.nice-select.min.js"></script>	
+<script src="js/waypoints.min.js"></script>
+<script src="js/jquery.counterup.min.js"></script>					
+<script src="js/parallax.min.js"></script>		
+<script src="js/mail-script.js"></script>	
+<script src="js/main.js"></script>	

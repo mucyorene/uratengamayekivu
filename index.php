@@ -43,8 +43,9 @@
 		<!-- Responsive CSS -->
 		<link rel="stylesheet" type="text/css" href="assets/css/responsive.css" media="all" />
 		<link rel="stylesheet" type="text/css" href="css/icofont.min.css" media="all" />
-
-
+		<!-- Social medias -->
+		<link rel="stylesheet" href="assets/css/social.css">
+		<link href="font/css/all.css" rel="stylesheet"> 
 </head>
 <body>
 	<?php require_once("inc/header.php");?>
@@ -189,12 +190,11 @@
 													</div>
 												</div>
 												<div class="feature-middle">
-													<span><i class="icofont-car"></i><?= $row['carName']?></span>
 													<span><i class="icofont icofont-company"></i><?= $row['carTransimission']?></span>
-													<span><i class="icofont icofont-glue-oil"></i><?= $row['kmPerLitre']?></span>
-													<span><i class="icofont icofont-paper-plane"></i><?= $row['carSeats']?></span>
+													<span><i class="icofont icofont-glue-oil"></i><?= $row['kmPerLitre']?> KM/L</span>
+													<span><i class="icofont icofont-paper-plane"></i><?= $row['carSeats']?> Seats</span>
 													<span><i class="icofont icofont-energy-water"></i><?= $row['carAirCondition']?></span>
-													<span><i class="icofont icofont-dollar"></i>From <b><?= $row['carPrice']?></i></b></span>
+													<span><i class="icofont icofont-dollar"></i>From <?= $row['carPrice']?></i>$</span>
 												</div>
 												<div class="feature-bottom">
 													<h5><?= $row['carName']?><a style="text-decoration: none;color: grey;" data-toggle="collapse" href="#collapse<?= $row['carId']?>" role="button" aria-expanded="false" aria-controls="collapseExample">

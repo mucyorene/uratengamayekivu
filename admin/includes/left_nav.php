@@ -23,7 +23,7 @@
             <li class="dropdown">
               <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="map"></i><span>For rent</span></a>
               <ul class="dropdown-menu">
-                <li><a href="">Bookings</a></li>
+                <li><a href="bookedCarRent">Bookings</a></li>
                 <li><a href="new_car">Add new car</a></li>
                 <li><a href="rentCars">View all cars</a></li>
                

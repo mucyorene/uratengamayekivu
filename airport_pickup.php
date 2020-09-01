@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 	<html lang="zxx" class="no-js">
 	<head>
-		
+
 		<!-- Mobile Specific Meta -->
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<!-- Favicon-->
@@ -39,9 +39,10 @@
 			<link rel="stylesheet" href="css/main.css">
 			<link rel="stylesheet" href="css/tab.css">
 			<link href="font/css/all.css" rel="stylesheet"> 
-
+			<!-- Social medias -->
+			<link rel="stylesheet" href="assets/css/social.css">
+			<link href="font/css/all.css" rel="stylesheet"> 
 	</head>
-
 
 <body>
 	<div id="myModal" class="modal fade" role="dialog">
@@ -65,7 +66,7 @@
 		<?php require_once("inc/header.php")?>
 
 		<section class="banner-area relative" id="home" style="background: url(img/test/46.jpg) center;
-  background-size: cover;">	
+  				background-size: cover;">	
 				<div class="overlay overlay-bg1"></div>
 				<div class="container">
 					<div class="row d-flex align-items-center justify-content-center">

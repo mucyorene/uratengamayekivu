@@ -1,3 +1,4 @@
+	<?php require_once("admin/includes/db.php");?>
 	<!DOCTYPE html>
 	<html lang="zxx" class="no-js">
 	<head>
@@ -34,14 +35,16 @@
 			<link rel="stylesheet" href="css/magnific-popup.css">
 			<link rel="stylesheet" href="css/bootstrap.css">
 			<link rel="stylesheet" href="css/main.css">
-		</head>
+
+			
+	</head>
 		<body>
 			<?php require_once("inc/header.php")?>
 			<!-- #header -->
 
 			<!-- start banner Area -->
 			<section class="banner-area relative" id="home" style="background: url(img/test/45.jpg) center;
-  background-size: cover;">	
+  				background-size: cover;">	
 				<div class="overlay overlay-bg"></div>
 				<div class="container">
 					<div class="row d-flex align-items-center justify-content-center">
@@ -56,7 +59,6 @@
 			</section>
 			<!-- End banner Area -->	
 
-		
 			<!-- Start feature Area -->
 			<section class="feature-area section-gap" id="service" style="background: url('img/test/.jpg');">
 				<div class="container">
@@ -70,25 +72,25 @@
 					<!-- </div> -->
 					<div class="col-lg-5  col-md-6 header-right">
 							<h4 class="text-white pb-30">Car booking !</h4>
-							<form class="form" role="form" autocomplete="off">
+							<form class="form" role="form" autocomplete="off" method="POST">
 							    <div class="form-group">
 							       	You selected	
 							    </div>
 							    <div class="form-group row">
 							        <div class="col-md-6 wrap-left">
 								       	<div class="default-select" id="default-select">
-											<select>
+											<select name="noRentCars">
 												<option value="" disabled selected hidden>Pickup</option>
-												<option value="1">Pickup One</option>
-												<option value="1">Pickup Two</option>
-												<option value="1">Pickup Three</option>
-												<option value="1">Pickup Four</option>
+												<option value="Pickup One">Pickup One</option>
+												<option value="Pickup Two">Pickup Two</option>
+												<option value="Pickup Three">Pickup Three</option>
+												<option value="Pickup Four">Pickup Four</option>
 											</select>
 										</div>
 							        </div>
 							        <div class="col-md-6 wrap-right">
 										<div class="input-group dates-wrap">                                          
-											<input id="datepicker" class="dates form-control" id="exampleAmount" placeholder="Date & time" type="text">                        
+											<input id="datepicker" name="dateToPick" class="dates form-control" id="exampleAmount" placeholder="Date & time" type="text">                        
 											<div class="input-group-prepend">
 												<span  class="input-group-text"><span class="lnr lnr-calendar-full"></span></span>
 											</div>											
@@ -98,18 +100,18 @@
 							    <div class="form-group row">
 							        <div class="col-md-6 wrap-left">
 								       	<div class="default-select" id="default-select">
-											<select>
+											<select name="dropOffs">
 												<option value="" disabled selected hidden>Drop off</option>
-												<option value="1">Drop off One</option>
-												<option value="1">Drop off Two</option>
-												<option value="1">Drop off Three</option>
-												<option value="1">Drop off Four</option>
+												<option value="Drop off One">Drop off One</option>
+												<option value="Drop off Two">Drop off Two</option>
+												<option value="Drop off Three">Drop off Three</option>
+												<option value="Drop off Four">Drop off Four</option>
 											</select>
 										</div>
 							        </div>
 							        <div class="col-md-6 wrap-right">
 										<div class="input-group dates-wrap">                                              
-											<input id="datepicker2" class="dates form-control" id="exampleAmount" placeholder="Date & time" type="text">                        
+											<input id="datepicker2" name="dateOfDropOff" class="dates form-control" id="exampleAmount" placeholder="Date & time" type="text">                        
 											<div class="input-group-prepend">
 												<span  class="input-group-text"><span class="lnr lnr-calendar-full"></span></span>
 											</div>											
@@ -120,25 +122,49 @@
 							    	<input class="form-control txt-field" type="text" name="name" placeholder="Your name">
 							    	<input class="form-control txt-field" type="email" name="email" placeholder="Email address">
 							    	<input class="form-control txt-field" type="tel" name="phone" placeholder="Phone number">
-							    	<input class="form-control txt-field" type="text" name="name" placeholder="Stree number">
+							    	<input class="form-control txt-field" type="text" name="streetNumber" placeholder="Street number">
 							    </div>
 							    <div class="form-group row">
 							        <div class="col-md-12">
-							            <button type="reset" class="btn btn-primary btn-block text-center text-uppercase">Confirm Car Booking</button>
+							            <button type="type" name="saveCarRentBooking" class="btn btn-primary btn-block text-center text-uppercase">Confirm Car Booking</button>
 							        </div>
 							    </div>
 							</form>
 						</div>	
 					</div>
-					
+					<?php
+						if (isset($_POST['saveCarRentBooking'])) {
+							$a = mysqli_real_escape_string($conn,$_POST['noRentCars']);
+							$b = mysqli_real_escape_string($conn,$_POST['dateToPick']);
+							$c = mysqli_real_escape_string($conn,$_POST['dropOffs']);
+							$d = mysqli_real_escape_string($conn,$_POST['dateOfDropOff']);
+							$e = mysqli_real_escape_string($conn,$_POST['name']);
+							$f = mysqli_real_escape_string($conn,$_POST['email']);
+							$g = mysqli_real_escape_string($conn,$_POST['phone']);
+							$h = mysqli_real_escape_string($conn,$_POST['streetNumber']);
+							$i = "#".$d.$g.$b;
+
+							$ch = mysqli_query($conn,"SELECT *FROM carrentbookings WHERE bookingCode='$i'") or die(mysqli_error($conn));
+							if (mysqli_num_rows($ch)>0) {
+								echo "<script>alert('This booking already booked')</script>";
+								# code...
+							}else{
+								$saving = mysqli_query($conn,"INSERT INTO carrentbookings (id,numberOfCars,datePickedUp,numberOfDropOffs,
+								dateReturned,names,email,phoneNumber,streetNumber,bookingCode) VALUES ('','$a','$b','$c','$d','$e','$f',
+								'$g','$h','$i')") or die(mysqli_error($conn));
+								if ($saving) {
+									echo "<script>alert('Thank you for booking your booking code is".$i."');
+									window.top.location='book_car.php';
+									</script>";
+									# code...
+								}
+							}
+
+						}
+					?>
 				</div>	
 			</section>
-			<!-- End feature Area -->				
-
-									
-
-	
-
+			<!-- End feature Area -->
 			<!-- start footer Area -->		
 			<?php require_once("inc/footer.php");?>	
 			<!-- End footer Area -->			

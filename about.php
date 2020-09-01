@@ -34,6 +34,10 @@
 			<link rel="stylesheet" href="css/magnific-popup.css">
 			<link rel="stylesheet" href="css/bootstrap.css">
 			<link rel="stylesheet" href="css/main.css">
+
+			<!-- Social medias -->
+		<link rel="stylesheet" href="assets/css/social.css">
+		<link href="font/css/all.css" rel="stylesheet"> 
 	</head>
 		<body>
 			<?php require_once("inc/header.php")?>

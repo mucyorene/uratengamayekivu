@@ -38,12 +38,42 @@
                 <div class="single-footer-widget">
                     <h6>Follow Us</h6>
                     <p>Be with us on social media</p>
-                    <div class="footer-social d-flex align-items-center">
+
+                    <div class="uren-social_link">
+                        <ul>
+                            <li class="facebook">
+                                <a href="https://www.facebook.com/" data-toggle="tooltip" target="_blank" title="Facebook">
+                                    <i class="fab fa-facebook"></i>
+                                </a>
+                            </li>
+                            <li class="twitter">
+                                <a href="https://twitter.com/" data-toggle="tooltip" target="_blank" title="Twitter">
+                                    <i class="fab fa-twitter-square"></i>
+                                </a>
+                            </li>
+                            <li class="youtube">
+                                <a href="https://www.youtube.com/" data-toggle="tooltip" target="_blank" title="Youtube">
+                                    <i class="fab fa-youtube"></i>
+                                </a>
+                            </li>
+                            <!-- <li class="google-plus">
+                                <a href="https://www.plus.google.com/discover" data-toggle="tooltip" target="_blank" title="Google Plus">
+                                    <i class="fab fa-google-plus"></i>
+                                </a>
+                            </li> -->
+                            <li class="instagram">
+                                <a href="https://rss.com/" data-toggle="tooltip" target="_blank" title="Instagram">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- <div class="footer-social d-flex align-items-center">
                         <a href="#"><i class="fa fa-facebook"></i></a>
                         <a href="#"><i class="fa fa-twitter"></i></a>
                         <a href="#"><i class="fa fa-instagram"></i></a>
                         <a href="#"><i class="fa fa-linkedin"></i></a>
-                    </div>
+                    </div> -->
                 </div>
             </div>							
             <div class="col-lg-4  col-md-6 col-sm-6">

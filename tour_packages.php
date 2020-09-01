@@ -34,7 +34,11 @@
 			<link rel="stylesheet" href="css/magnific-popup.css">
 			<link rel="stylesheet" href="css/bootstrap.css">
 			<link rel="stylesheet" href="css/main.css">
-			<link rel="stylesheet" type="text/css" href="css/pricing.css">
+            <link rel="stylesheet" type="text/css" href="css/pricing.css">
+            
+            <!-- Social medias -->
+            <link rel="stylesheet" href="assets/css/social.css">
+            <link href="font/css/all.css" rel="stylesheet"> 
 	</head>
 		<body>
 			<?php require_once("inc/header.php");?>
@@ -153,11 +157,6 @@
 				</div>	
 			</section>
 			<!-- End feature Area -->				
-
-									
-
-	
-
 			<!-- start footer Area -->		
 			<?php require_once("inc/footer.php")?>	
 			<!-- End footer Area -->			

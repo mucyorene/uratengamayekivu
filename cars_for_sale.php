@@ -50,6 +50,11 @@
 		<!-- Responsive CSS -->
 		<link rel="stylesheet" type="text/css" href="assets/css/responsive.css" media="all" />
 
+
+			<!-- Social medias -->
+			<link rel="stylesheet" href="assets/css/social.css">
+			<link href="font/css/all.css" rel="stylesheet"> 
+
 	</head>
 <body>
 	<div id="myModal" class="modal fade" role="dialog">
@@ -569,8 +574,6 @@
 									</div>
 								</div>
 							</div>
-
-
 
 				</div>
 				</div>

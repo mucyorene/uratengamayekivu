@@ -1,5 +1,8 @@
 <?php
     require_once("admin/includes/db.php");
+    if (empty($_GET['ids'])) {
+       echo "<script>window.top.location = 'cars_for_rent.php';</script>";
+    }
     $id = $_GET['ids'];
 ?>
 <!doctype html>
