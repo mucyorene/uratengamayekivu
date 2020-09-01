@@ -316,11 +316,20 @@ $id = $_GET['editCar'];
           $n = mysqli_real_escape_string($conn,$_FILES['photo4']["name"]);          
           $o = mysqli_real_escape_string($conn,$_FILES['photo5']["name"]);
 
-          $query = mysqli_query($conn,"
-          UPDATE car_rent SET
-          carName='$a',carTransimission='$b',carAirCondition='$c',carSeats='$d',kmPerLitre='$p',doors='$e',fuelType='$f',
-          carPrice='$g',carType='$h',carDesc='$i',thumbnail='$j',photo1='$k',photo2='$l',photo3='$m',photo4='$n',photo5='$0'
-          WHERE carId = '$id'")or die(mysqli_error($conn));
+          if (empty($j) && empty($k) && empty($l) && empty($m) && empty($n) && empty($o)) {
+            $query = mysqli_query($conn,"UPDATE car_rent SET
+            carName='$a',carTransimission='$b',carAirCondition='$c',carSeats='$d',kmPerLitre='$p',doors='$e',fuelType='$f',
+            carPrice='$g',carType='$h',carDesc='$i' WHERE carId = '$id'")or die(mysqli_error($conn));
+            if ($query) {
+              echo "<script>window.location = 'rentCars.php';</script>";
+              # code...
+            }
+
+          }else{
+            $query = mysqli_query($conn,"UPDATE car_rent SET
+            carName='$a',carTransimission='$b',carAirCondition='$c',carSeats='$d',kmPerLitre='$p',doors='$e',fuelType='$f',
+            carPrice='$g',carType='$h',carDesc='$i',thumbnail='$j',photo1='$k',photo2='$l',photo3='$m',photo4='$n',photo5='$0'
+            WHERE carId = '$id'")or die(mysqli_error($conn));
           if ($query) {
             move_uploaded_file($_FILES['thumbs']["tmp_name"],"media/imagesRent/".$j);
             move_uploaded_file($_FILES['photo1']["tmp_name"],"media/imagesRent/".$k);
@@ -329,6 +338,7 @@ $id = $_GET['editCar'];
             move_uploaded_file($_FILES['photo4']["tmp_name"],"media/imagesRent/".$n);
             move_uploaded_file($_FILES['photo5']["tmp_name"],"media/imagesRent/".$o);                        
             echo "<script>window.location = 'rentCars.php';</script>";
+          }
           }
         }
       ?>

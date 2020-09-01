@@ -40,7 +40,7 @@
 			<?php require_once("inc/header.php");?>
 					<!-- start banner Area -->
 			<section class="banner-area relative" id="home" style="background: url(img/test/25.jpg) center;
-  background-size: cover;">	
+                background-size: cover;">	
 				<div class="overlay overlay-bg"></div>
 				<div class="container">
 					<div class="row d-flex align-items-center justify-content-center">

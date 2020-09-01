@@ -53,8 +53,6 @@
 				</div>
 			</section>
 			<!-- End banner Area -->	
-
-		
 			<!-- Start feature Area -->
 			<section class="feature-area section-gap" id="service">
 				<div class="container">

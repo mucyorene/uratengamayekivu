@@ -175,7 +175,7 @@ require_once("includes/db.php");
                                   <td><?= $row['carType']?></td>
                                   <td><?= $row['carDesc']?></td>
                                   <td><a href="editCarRent?editCar=<?= $row['carId']?>" class="btn btn-success">Edit</a></td>
-                                  <td><a href="deleteCarRent?editCar=<?= $row['carId']?>" class="btn btn-danger">Delete</a></td>                                  
+                                  <td><a href="deleteCarRent?deleteCar=<?= $row['carId']?>" class="btn btn-danger">Delete</a></td>                                  
                                 </tr>
                               <?php
                             $a++;}
@@ -196,48 +196,6 @@ require_once("includes/db.php");
         </section>
         <?php include'includes/settings.php' ?>
       </div>
-      <?php
-        if (isset($_POST["save_car"])) {
-          $a = mysqli_real_escape_string($conn,$_POST['car_name']);
-          $b = mysqli_real_escape_string($conn,$_POST['transmission']);     
-          $c = mysqli_real_escape_string($conn,$_POST['airCondition']);      
-          $d = mysqli_real_escape_string($conn,$_POST['car_seats']);
-          $p = mysqli_real_escape_string($conn,$_POST['kmLitre']);                            
-          $e = mysqli_real_escape_string($conn,$_POST['car_doors']);
-          $f = mysqli_real_escape_string($conn,$_POST['car_fuel']);  
-          $g = mysqli_real_escape_string($conn,$_POST['price']);
-          $h = mysqli_real_escape_string($conn,$_POST['car_type']);          
-          $i = mysqli_real_escape_string($conn,$_POST['description']);          
-          $j = mysqli_real_escape_string($conn,$_FILES['thumbs']["name"]);
-          $k = mysqli_real_escape_string($conn,$_FILES['photo1']["name"]);          
-          $l = mysqli_real_escape_string($conn,$_FILES['photo2']["name"]);          
-          $m = mysqli_real_escape_string($conn,$_FILES['photo3']["name"]);          
-          $n = mysqli_real_escape_string($conn,$_FILES['photo4']["name"]);          
-          $o = mysqli_real_escape_string($conn,$_FILES['photo5']["name"]);
-        $exist = mysqli_query($conn,"SELECT * FROM car_rent WHERE carName = '$a'") or die(mysqli_error($conn));
-        if (mysqli_num_rows($exist)>0) {
-          echo "<script>alert('This car already registered')</script>";
-        }
-        else{
-          $query = mysqli_query($conn,"INSERT INTO car_rent (carId,carName,carTransimission,carAirCondition,carSeats,kmPerLitre,
-          doors,fuelType,carPrice,carType,carDesc,thumbnail,photo1,photo2,photo3,photo4,photo5) VALUES ('','$a','$b','$c','$d',
-          '$p','$e','$f','$g','$h','$i','$j','$k','$l','$m','$n','$o')") or die(mysqli_error($conn));
-          if ($query) {
-            move_uploaded_file($_FILES['thumbs']["tmp_name"],"media/imagesRent/".$j);
-            move_uploaded_file($_FILES['photo1']["tmp_name"],"media/imagesRent/".$k);
-            move_uploaded_file($_FILES['photo2']["tmp_name"],"media/imagesRent/".$l);
-            move_uploaded_file($_FILES['photo3']["tmp_name"],"media/imagesRent/".$m);
-            move_uploaded_file($_FILES['photo4']["tmp_name"],"media/imagesRent/".$n);
-            move_uploaded_file($_FILES['photo5']["tmp_name"],"media/imagesRent/".$o);                        
-            echo "<script>window.location = 'new_car.php';</script>";
-          }
-          else {
-            die();
-          }
-        }
-        
-        }
-      ?>
       <footer class="main-footer">
         <div class="footer-left">
           <a href="">&copy Uratengamaye Kivu Ltd | Rwanda</a></a>
