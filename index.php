@@ -144,7 +144,7 @@
 				(id,carId,driveType,numberOfpickups,picDate,names,email,phoneNumber,bookingNumber) VALUES
 				('','$a','$b','$c','$d','$e','$f','$g','$h')") or die(mysqli_error($conn));
 				if ($saveAirPBookings) {
-					echo "<script>alert('Thank you for booking')</script>";
+					echo "<script>alert('Thank you for booking your booking codes is: ".$h."')</script>";
 					# code...
 				}
 			 }
