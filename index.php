@@ -315,7 +315,7 @@
 					</div>				
 					<div class="row">
 					
-							<div class="col-lg-4 col-md-6">
+							<!-- <div class="col-lg-4 col-md-6">
 								<div class="single-feature1">
 									<div class="feature-image">
 									   	<img src="uploads/RAV4_2004_black/5.jpg" alt="TXL">
@@ -346,7 +346,7 @@
 										  </div>
 										</div>	
 									</div>
-							</div>
+							</div> -->
 							<!-- </div> -->
 							<!-- <div class="col-lg-4 col-md-6">
 								<div class="single-feature1">
