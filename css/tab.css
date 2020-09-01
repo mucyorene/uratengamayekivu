@@ -1,0 +1,58 @@
+/*/*.display-tablecell {
+    display: table-cell;
+    vertical-align: middle;
+}
+-------- FEATURE AREA CSS START --------
+---------------------------------------*/
+
+
+.feature-area ul.nav.nav-tabs li {
+    width: 25%;
+        
+}
+
+.feature-area .nav-tabs li a {
+    
+    cursor: pointer;
+    transition: 0.4s;
+    color: #333;
+    text-align: center;
+}
+.feature-area .nav-tabs li a.active {
+background: #f9fef8;
+   
+   font-weight: bold;
+}
+
+.cars_rent{
+    margin:0px;
+    background: #fafff0;
+    width: 25%;
+
+
+}
+
+.feature-area .tab-content{
+    background: #f9fef8;
+}
+@media (max-width: 591.98px) {
+  
+  .cars_rent{
+    width: 50%;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .cars_rent img{
+    width: 100%;
+  }
+  .cars_rent{
+    width: 100%;
+  }
+}
+.thumb a img{
+    
+}
+.pt-footer a{
+    display: none;
+}

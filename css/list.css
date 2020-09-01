@@ -1,0 +1,127 @@
+
+/*-------- FEATURE AREA CSS START --------
+---------------------------------------*/*/
+.feature-area .theme-btn2:hover {
+    background: #000;
+    color: #fff;
+}
+
+.feature-area ul.nav.nav-tabs li {
+    width: 25%;
+        
+}
+
+.feature-area .nav-tabs li a {
+    
+    cursor: pointer;
+    transition: 0.4s;
+    color: #333;
+    text-align: center;
+}
+.feature-area .nav-tabs li a.active {
+background: #f9fef8;
+   
+   font-weight: bold;
+}
+
+.feature-area .tab-content {
+    padding: 0;
+    border: none;
+    background: transparent;
+}
+.feature-area .tab-content p {
+    margin-bottom: 0;
+}
+
+.feature-image {
+    position: relative;
+}
+
+.feature-image img {
+    width: 100%;
+}
+
+.single-feature1 {
+    margin-top: 10px;
+    margin-bottom: 30px;
+    background: #fff;
+    box-shadow: 0 0 2px #ccc;
+}
+
+.feature-overlay {
+    background: rgba(0,0,0,0.5);
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    color: #fff;
+    text-align: center;
+    opacity: 0;
+    transition: 0.4s;
+}
+
+.feature-overlay a {
+    background: transparent none repeat scroll 0 0;
+    border: 1px solid #fff;
+    border-radius: 100%;
+    color: #fff;
+    display: inline-block;
+    font-size: 14px;
+    height: 40px;
+    line-height: 40px;
+    width: 40px;
+}
+
+.feature-overlay a:hover {
+    background: #fff;
+    color: #97c03a;
+}
+
+.feature-middle {
+    border: 1px solid #bbb;
+    padding: 8px 15px;
+    overflow: hidden;
+}
+
+.feature-middle span {
+    width: 33.33%;
+    float: left;
+    font-size: 15px;
+    text-decoration: none;
+    color: black;
+}
+
+.feature-middle span i {
+    margin-right: 5px;
+    font-size: 16px;
+    color: #97c03a;
+}
+
+
+.feature-bottom {
+    padding: 15px;
+    border: 1px solid #bbb;
+    border-top: none;
+}
+.feature-bottom h4 {
+    margin-bottom: 6px;
+}
+
+.single-feature1:hover .feature-overlay {
+    opacity: 1;
+}
+/*--------------------------------------
+--------- FEATURE AREA CSS END ---------
+---------*/
+
+.display-table {
+    display: table;
+    height: 100%;
+    width: 100%;
+}
+.display-tablecell {
+    display: table-cell;
+    vertical-align: middle;
+}
