@@ -328,7 +328,7 @@ $id = $_GET['editCar'];
           }else{
             $query = mysqli_query($conn,"UPDATE car_rent SET
             carName='$a',carTransimission='$b',carAirCondition='$c',carSeats='$d',kmPerLitre='$p',doors='$e',fuelType='$f',
-            carPrice='$g',carType='$h',carDesc='$i',thumbnail='$j',photo1='$k',photo2='$l',photo3='$m',photo4='$n',photo5='$0'
+            carPrice='$g',carType='$h',carDesc='$i',thumbnail='$j',photo1='$k',photo2='$l',photo3='$m',photo4='$n',photo5='$o'
             WHERE carId = '$id'")or die(mysqli_error($conn));
           if ($query) {
             move_uploaded_file($_FILES['thumbs']["tmp_name"],"media/imagesRent/".$j);
