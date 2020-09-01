@@ -70,7 +70,7 @@
 					<form class="form" role="form" autocomplete="off" method="POST">
 						<div class="form-group">
 							<div class="default-select" id="default-select">
-								<select>
+								<select name="carId">
 									<option value="" disabled selected hidden>Select Your Car</option>
 									<?php
 										$select = mysqli_query($conn,"SELECT *FROM car_rent") or die(mysqli_error($conn));
@@ -85,28 +85,28 @@
 						</div>
 						<div class="form-group">
 							<div class="default-select" id="default-select">
-								<select>
+								<select name="drivingType">
 									<option value="" disabled selected hidden>Self drive?</option>
-									<option value="1">YES</option>
-									<option value="1">NO</option>
+									<option value="yes">YES</option>
+									<option value="no">NO</option>
 								</select>
 							</div>
 						</div>
 						<div class="form-group row">
 							<div class="col-md-6 wrap-left">
 								<div class="default-select" id="default-select">
-									<select>
+									<select name="noPickups">
 										<option value="" disabled selected hidden>Pickup</option>
-										<option value="1">Pickup One</option>
-										<option value="1">Pickup Two</option>
-										<option value="1">Pickup Three</option>
-										<option value="1">Pickup Four</option>
+										<option value="Pickup One">Pickup One</option>
+										<option value="Pickup Two">Pickup Two</option>
+										<option value="Pickup Three">Pickup Three</option>
+										<option value="Pickup Four">Pickup Four</option>
 									</select>
 								</div>
 							</div>
 							<div class="col-md-6 wrap-right">
 								<div class="input-group dates-wrap">                                          
-									<input id="datepicker" class="dates form-control" id="exampleAmount" placeholder="Date & time" type="text">                        
+									<input id="datepicker" class="dates form-control" id="exampleAmount" name="pickupDate" placeholder="Date & time" type="text">                        
 									<div class="input-group-prepend">
 										<span  class="input-group-text"><span class="lnr lnr-calendar-full"></span></span>
 									</div>											
@@ -115,19 +115,41 @@
 						</div>
 													
 						<div class="from-group">
-							
 							<input class="form-control txt-field" type="text" name="name" placeholder="Your name">
 							<input class="form-control txt-field" type="email" name="email" placeholder="Email address">
 							<input class="form-control txt-field" type="tel" name="phone" placeholder="Phone number">
 						</div>
 						<div class="form-group row">
 							<div class="col-md-12">
-								<button type="reset" class="btn btn-default btn-lg btn-block text-center text-uppercase">Confirm Car Booking</button>
+								<button type="submit" name="saveAirportBookings" class="btn btn-default btn-lg btn-block text-center text-uppercase">Confirm Car Booking</button>
 							</div>
 						</div>
 					</form>
 				</div>
-
+	<?php
+		if (isset($_POST['saveAirportBookings'])) {
+			$a = mysqli_real_escape_string($conn,$_POST['carId']);
+			$b = mysqli_real_escape_string($conn,$_POST['drivingType']);
+			$c = mysqli_real_escape_string($conn,$_POST['noPickups']);
+			$d = mysqli_real_escape_string($conn,$_POST['pickupDate']);
+			$e = mysqli_real_escape_string($conn,$_POST['name']);
+			$f = mysqli_real_escape_string($conn,$_POST['email']);
+			$g = mysqli_real_escape_string($conn,$_POST['phone']);
+			$h = "#".$a.$g.$d;
+			$ch = mysqli_query($conn,"SELECT *FROM airportservices WHERE bookingNumber='$h'") or die(mysqli_error($conn));
+			 if (mysqli_num_rows($ch)>0) {
+				echo "<script>alert('This booking already done')</script>";
+			 }else{
+					$saveAirPBookings = mysqli_query($conn,"INSERT INTO airportservices 
+				(id,carId,driveType,numberOfpickups,picDate,names,email,phoneNumber,bookingNumber) VALUES
+				('','$a','$b','$c','$d','$e','$f','$g','$h')") or die(mysqli_error($conn));
+				if ($saveAirPBookings) {
+					echo "<script>alert('Thank you for booking')</script>";
+					# code...
+				}
+			 }
+		}
+	?>
 			</div>
 		</div>					
 	</section>
