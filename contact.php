@@ -1,3 +1,6 @@
+	<?php
+		require_once("admin/includes/db.php");
+	?>
 	<!DOCTYPE html>
 	<html lang="zxx" class="no-js">
 	<head>
@@ -44,7 +47,7 @@
 		<?php require_once("inc/header.php");?>
 			<!-- start banner Area -->
 			<section class="banner-area relative" id="home" style="background: url(img/test/23.jpg) center;
-  			background-size: cover;">	
+  				background-size: cover;">	
 				<div class="overlay overlay-bg1"></div>
 				<div class="container">
 					<div class="row d-flex align-items-center justify-content-center">
@@ -96,7 +99,7 @@
 							</div>														
 						</div>
 						<div class="col-lg-8">
-							<form class="form-area " id="myForm" action="mail.php" method="post" class="contact-form text-right">
+							<form class="form-area " id="myForm" action="" method="POST" class="contact-form text-right">
 								<div class="row">	
 									<div class="col-lg-6 form-group">
 										<input name="name" placeholder="Enter your name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'" class="common-input mb-20 form-control" required="" type="text">
@@ -108,11 +111,32 @@
 									</div>
 									<div class="col-lg-6 form-group">
 										<textarea class="common-textarea form-control" name="message" placeholder="Messege" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Messege'" required=""></textarea>
-										<button class="primary-btn mt-20 text-white" style="float: right;">Send Message</button>
-																				
+										<button type="submit" name="contactUs" class="primary-btn mt-20 text-white" style="float: right;">Send Message</button>							
 									</div>
 								</div>
-							</form>	
+							</form>
+
+							<?php
+								if (isset($_POST['contactUs'])) {
+									$a = mysqli_real_escape_string($conn,$_POST['name']);
+									$b = mysqli_real_escape_string($conn,$_POST['email']);
+									$c = mysqli_real_escape_string($conn,$_POST['subject']);
+									$d = mysqli_real_escape_string($conn,$_POST['message']);
+									
+									$ch = mysqli_query($conn,"SELECT *FROM contact WHERE message='$d' AND subject='$c'") or die(mysqli_error($conn));
+									if (mysqli_num_rows($ch)) {
+										echo "<script>alert('Your message already sent');</script>";
+									}else{
+										$contact = mysqli_query($conn,"INSERT INTO contact (id,names,email,subject,message,sentAt)
+										VALUES ('','$a','$b','$c','$d','')") or die(mysqli_error($conn));
+										
+										if ($contact) {
+											echo "<script>alert('Your message sent');</script>";
+											echo "<script>window.top.location='contact.php'</script>";
+										}
+									}
+								}
+							?>
 						</div>
 					</div>
 				</div>	
@@ -139,7 +163,7 @@
 			<script src="js/waypoints.min.js"></script>
 			<script src="js/jquery.counterup.min.js"></script>					
 			<script src="js/parallax.min.js"></script>		
-			<script src="js/mail-script.js"></script>	
+			<!-- <script src="js/mail-script.js"></script>	 -->
 			<script src="js/main.js"></script>	
 		</body>
 	</html>

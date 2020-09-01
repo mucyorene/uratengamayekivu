@@ -1,4 +1,7 @@
-	<?php require_once("admin/includes/db.php");?>
+	<?php
+		require_once("admin/includes/db.php");
+		$id  = $_GET['idSent'];
+	?>
 	<!DOCTYPE html>
 	<html lang="zxx" class="no-js">
 	<head>
@@ -36,6 +39,9 @@
 			<link rel="stylesheet" href="css/bootstrap.css">
 			<link rel="stylesheet" href="css/main.css">
 
+			<!-- Social medias -->
+			<link rel="stylesheet" href="assets/css/social.css">
+			<link href="font/css/all.css" rel="stylesheet"> 
 			
 	</head>
 		<body>
@@ -150,11 +156,11 @@
 								# code...
 							}else{
 								$saving = mysqli_query($conn,"INSERT INTO carrentbookings (id,numberOfCars,datePickedUp,numberOfDropOffs,
-								dateReturned,names,email,phoneNumber,streetNumber,bookingCode) VALUES ('','$a','$b','$c','$d','$e','$f',
-								'$g','$h','$i')") or die(mysqli_error($conn));
+								dateReturned,names,email,phoneNumber,streetNumber,bookingCode,carId) VALUES ('','$a','$b','$c','$d','$e','$f',
+								'$g','$h','$i','$id')") or die(mysqli_error($conn));
 								if ($saving) {
 									echo "<script>alert('Thank you for booking your booking code is".$i."');
-									window.top.location='book_car.php';
+									window.top.location='cars_for_rent.php';
 									</script>";
 									# code...
 								}

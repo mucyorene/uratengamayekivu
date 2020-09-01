@@ -143,6 +143,7 @@ require_once("includes/db.php");
                         <thead>
                           <tr>
                             <th>N<sup>o</sup></th>
+                            <th>Car photo</th>
                             <th>Booking Number</th>
                             <th>Pickup</th>
                             <th>Date of Pickup</th>
@@ -157,13 +158,15 @@ require_once("includes/db.php");
                         </thead>
                         <tbody>
                         <?php
-                          $allQuery = mysqli_query($conn,"SELECT *FROM carrentbookings ORDER BY id DESC") or die(mysqli_error());
+                          $allQuery = mysqli_query($conn,"SELECT *FROM carrentbookings,car_rent WHERE car_rent.carId = carrentbookings.carId 
+                          ORDER BY carrentbookings.id DESC") or die(mysqli_error());
                           if (mysqli_num_rows($allQuery)>0) {
                             $a = 1;
                             while ($row = mysqli_fetch_array($allQuery)) {
                               ?>
                                 <tr>
                                   <td><?= $a;?></td>
+                                  <td><img src="media/imagesRent/<?= $row['thumbnail']?>" height="20" width="40" alt=""></td>
                                   <td><?= $row['bookingCode']?></td>
                                   <td><?= $row['numberOfCars']?></td>
                                   <td><?= $row['datePickedUp']?></td>

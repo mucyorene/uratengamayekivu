@@ -1,3 +1,6 @@
+<?php
+  require_once("db.php");
+?>
 <nav class="navbar navbar-expand-lg main-navbar sticky">
         <div class="form-inline mr-auto">
           <ul class="navbar-nav mr-3">
@@ -22,7 +25,17 @@
           <li class="dropdown dropdown-list-toggle"><a href="#" data-toggle="dropdown"
               class="nav-link nav-link-lg message-toggle"><i data-feather="mail"></i>
               <span class="badge headerBadge1">
-                6 </span> </a>
+              <?php
+                $se = mysqli_query($conn,"SELECT *FROM contact ORDER BY id DESC") or die(mysqli_error($conn));
+                if (mysqli_num_rows($se)>0) {
+                  // $va = "rwanda;rwanda";
+                  // $req = ;
+                  $number = mysqli_num_rows($se);
+                 echo $number;
+                }else{
+                  echo "0";
+                }
+              ?></span> </a>
             <div class="dropdown-menu dropdown-list dropdown-menu-right pullDown">
               <div class="dropdown-header">
                 Messages
@@ -31,49 +44,30 @@
                 </div>
               </div>
               <div class="dropdown-list-content dropdown-list-message">
-                <a href="#" class="dropdown-item"> <span class="dropdown-item-avatar
-                      text-white"> <img alt="image" src="assets/img/users/user-1.png" class="rounded-circle">
-                  </span> <span class="dropdown-item-desc"> <span class="message-user">John
-                      Deo</span>
-                    <span class="time messege-text">Please check your mail !!</span>
-                    <span class="time">2 Min Ago</span>
-                  </span>
-                </a> <a href="#" class="dropdown-item"> <span class="dropdown-item-avatar text-white">
-                    <img alt="image" src="assets/img/users/user-2.png" class="rounded-circle">
-                  </span> <span class="dropdown-item-desc"> <span class="message-user">Sarah
-                      Smith</span> <span class="time messege-text">Request for leave
-                      application</span>
-                    <span class="time">5 Min Ago</span>
-                  </span>
-                </a> <a href="#" class="dropdown-item"> <span class="dropdown-item-avatar text-white">
-                    <img alt="image" src="assets/img/users/user-5.png" class="rounded-circle">
-                  </span> <span class="dropdown-item-desc"> <span class="message-user">Jacob
-                      Ryan</span> <span class="time messege-text">Your payment invoice is
-                      generated.</span> <span class="time">12 Min Ago</span>
-                  </span>
-                </a> <a href="#" class="dropdown-item"> <span class="dropdown-item-avatar text-white">
-                    <img alt="image" src="assets/img/users/user-4.png" class="rounded-circle">
-                  </span> <span class="dropdown-item-desc"> <span class="message-user">Lina
-                      Smith</span> <span class="time messege-text">hii John, I have upload
-                      doc
-                      related to task.</span> <span class="time">30
-                      Min Ago</span>
-                  </span>
-                </a> <a href="#" class="dropdown-item"> <span class="dropdown-item-avatar text-white">
-                    <img alt="image" src="assets/img/users/user-3.png" class="rounded-circle">
-                  </span> <span class="dropdown-item-desc"> <span class="message-user">Jalpa
-                      Joshi</span> <span class="time messege-text">Please do as specify.
-                      Let me
-                      know if you have any query.</span> <span class="time">1
-                      Days Ago</span>
-                  </span>
-                </a> <a href="#" class="dropdown-item"> <span class="dropdown-item-avatar text-white">
-                    <img alt="image" src="assets/img/users/user-2.png" class="rounded-circle">
-                  </span> <span class="dropdown-item-desc"> <span class="message-user">Sarah
-                      Smith</span> <span class="time messege-text">Client Requirements</span>
-                    <span class="time">2 Days Ago</span>
-                  </span>
-                </a>
+                <?php
+                  $se = mysqli_query($conn,"SELECT *FROM contact ORDER BY id DESC") or die(mysqli_error($conn));
+                  if ($number = mysqli_num_rows($se)>0) {
+                    while($message = mysqli_fetch_array($se)){
+                      ?>
+                        <a href="#" class="dropdown-item"> <span class="dropdown-item-avatar text-white">
+                            <img alt="image" src="assets/img/blog/img03.png" class="rounded-circle">
+                          </span> <span class="dropdown-item-desc"> <span class="message-user">
+                            <?= $message['names'];?>
+                          </span> <span class="time messege-text"><?= $message['subject'];?></span>
+                            <span class="time">2 Days Ago</span>
+                          </span>
+                        </a>
+                      <?php
+                    }
+                  }
+                ?>
+              <!-- <a href="#" class="dropdown-item"> <span class="dropdown-item-avatar text-white">
+                  <img alt="image" src="assets/img/users/user-2.png" class="rounded-circle">
+                </span> <span class="dropdown-item-desc"> <span class="message-user">Sarah
+                    Smith</span> <span class="time messege-text">Client Requirements</span>
+                  <span class="time">2 Days Ago</span>
+                </span>
+              </a> -->
               </div>
               <div class="dropdown-footer text-center">
                 <a href="#">View All <i class="fas fa-chevron-right"></i></a>

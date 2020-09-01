@@ -60,7 +60,7 @@
 					<li class="menu-has-children"><a href="">Cars</a>
 					<ul>
 						<li <?php if (isset($_GET['forRent'])) { echo "class='active'";}?>><a <?php if (isset($_GET['forRent'])) { echo "class='active'";}?> href="cars_for_rent?forRent=1">For rent</a></li>
-						<li <?php if (isset($_GET['forSale'])) { echo "class='active'";}?>><a <?php if (isset($_GET['home'])) { echo "class='active'";}?> href="cars_for_sale?forSale=1">For sale</a></li>
+						<li <?php if (isset($_GET['forSale'])) { echo "class='active'";}?>><a <?php if (isset($_GET['forSale'])) { echo "class='active'";}?> href="cars_for_sale?forSale=1">For sale</a></li>
 					</ul>
 					</li>	
 

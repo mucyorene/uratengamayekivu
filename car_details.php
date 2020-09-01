@@ -80,6 +80,10 @@
             <link rel="stylesheet" href="css/main.css">
             <link rel="stylesheet" href="css/tab.css">
 
+            <!-- Social medias -->
+            <link rel="stylesheet" href="assets/css/social.css">
+            <link href="font/css/all.css" rel="stylesheet"> 
+
 </head>
 
 <body class="template-color-1">
@@ -207,7 +211,7 @@
                                             
                                             <div class="qty-btn_area">
                                                 <ul>
-                                                    <li><a class="qty-cart_btn" title="Book this car" href="book_car" data-toggle="tooltip">Book now</a></li>
+                                                    <li><a class="qty-cart_btn" title="Book this car" href="book_car?idSent=<?= $id;?>" data-toggle="tooltip">Book now</a></li>
                                                     <li><a class="qty-wishlist_btn" href="wishlist.html" data-toggle="tooltip" title="Add To Wishlist"><i class="ion-android-favorite-outline"></i></a>
                                                     </li>
                                                     
@@ -379,278 +383,61 @@
                                                 {"breakpoint":767, "settings": {"slidesToShow": 1}},
                                                 {"breakpoint":480, "settings": {"slidesToShow": 1}}
                                             ]'>
-                            <div class="product-slide_item">
-                                <div class="inner-slide">
-                                    <div class="single-product">
-                                        <div class="product-img">
-                                            <a href="#">
-                                                <img src="uploads/txl/2.jpg" alt="TXL">
-                                                
-                                            </a>
-                                            <div class="sticker">
-                                                <span class="sticker">New</span>
-                                            </div>
-                                            <div class="add-actions">
-                                                <ul>
-                                                    <li><a class="uren-add_cart" href="cart.html" data-toggle="tooltip" data-placement="top" title="Add To Cart"><i class="ion-bag"></i></a>
-                                                    </li>
-                                                    <li><a class="uren-wishlist" href="wishlist.html" data-toggle="tooltip" data-placement="top" title="Add To Wishlist"><i class="ion-android-favorite-outline"></i></a>
-                                                    </li>
-                                                    <li><a class="uren-add_compare" href="compare.html" data-toggle="tooltip" data-placement="top" title="Compare This Product"><i
-                                                            class="ion-android-options"></i></a>
-                                                    </li>
-                                                    <li class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><a href="javascript:void(0)" data-toggle="tooltip" data-placement="top" title="Quick View"><i
-                                                            class="ion-android-open"></i></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="product-content">
-                                            <div class="product-desc_info">
-                                                <div class="rating-box">
-                                                    <ul>
-                                                        <li><i class="ion-android-star"></i></li>
-                                                        <li><i class="ion-android-star"></i></li>
-                                                        <li><i class="ion-android-star"></i></li>
-                                                        <li class="silver-color"><i class="ion-android-star"></i></li>
-                                                        <li class="silver-color"><i class="ion-android-star"></i></li>
-                                                    </ul>
-                                                </div>
-                                                <h6><a class="product-name" href="#">TXL</a></h6>
-                                                <div class="price-box">
-                                                    <span class="new-price">$122.00</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product-slide_item">
-                                <div class="inner-slide">
-                                    <div class="single-product">
-                                        <div class="product-img">
-                                            <a href="#">
-                                                <img src="uploads/honda_crv/6.jpg" alt="TXL">
-                                                
-                                            </a>
-                                            <div class="sticker-area-2">
-                                                <span class="sticker-2">-20%</span>
-                                                <span class="sticker">New</span>
-                                            </div>
-                                            <div class="add-actions">
-                                                <ul>
-                                                    <li><a class="uren-add_cart" href="cart.html" data-toggle="tooltip" data-placement="top" title="Add To Cart"><i class="ion-bag"></i></a>
-                                                    </li>
-                                                    <li><a class="uren-wishlist" href="wishlist.html" data-toggle="tooltip" data-placement="top" title="Add To Wishlist"><i class="ion-android-favorite-outline"></i></a>
-                                                    </li>
-                                                    <li><a class="uren-add_compare" href="compare.html" data-toggle="tooltip" data-placement="top" title="Compare This Product"><i
-                                                            class="ion-android-options"></i></a>
-                                                    </li>
-                                                    <li class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><a href="javascript:void(0)" data-toggle="tooltip" data-placement="top" title="Quick View"><i
-                                                            class="ion-android-open"></i></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="product-content">
-                                            <div class="product-desc_info">
-                                                <div class="rating-box">
-                                                    <ul>
-                                                        <li><i class="ion-android-star"></i></li>
-                                                        <li><i class="ion-android-star"></i></li>
-                                                        <li><i class="ion-android-star"></i></li>
-                                                        <li class="silver-color"><i class="ion-android-star"></i></li>
-                                                        <li class="silver-color"><i class="ion-android-star"></i></li>
-                                                    </ul>
-                                                </div>
-                                                <h6><a class="product-name" href="#">HONDA CRV</a></h6>
-                                                <div class="price-box">
-                                                    <span class="new-price new-price-2">$194.00</span>
-                                                    <span class="old-price">$241.00</span>
+                            <?php
+                                $relatedQuery = mysqli_query($conn,"SELECT *FROM car_rent ORDER BY carId DESC") or die(mysqli_error($conn));
+                                if (mysqli_num_rows($relatedQuery)>0) {
+                                    # code...
+                                    $var = 1;
+                                    while ($related= mysqli_fetch_array($relatedQuery)) {
+                                       ?>
+                                        <div class="product-slide_item">
+                                            <div class="inner-slide">
+                                                <div class="single-product">
+                                                    <div class="product-img">
+                                                        <a href="car_details?ids=<?= $related['carId']?>">
+                                                            <img src="admin/media/imagesRent/<?= $related['thumbnail']?>" alt="TXL">
+                                                        </a>
+                                                        <div class="sticker">
+                                                            <span class="sticker">New</span>
+                                                        </div>
+                                                        <div class="add-actions">
+                                                            <ul>
+                                                                <li><a class="uren-add_cart" href="cart.html" data-toggle="tooltip" data-placement="top" title="Add To Cart"><i class="ion-bag"></i></a>
+                                                                </li>
+                                                                <li><a class="uren-wishlist" href="wishlist.html" data-toggle="tooltip" data-placement="top" title="Add To Wishlist"><i class="ion-android-favorite-outline"></i></a>
+                                                                </li>
+                                                                <li><a class="uren-add_compare" href="compare.html" data-toggle="tooltip" data-placement="top" title="Compare This Product"><i
+                                                                        class="ion-android-options"></i></a>
+                                                                </li>
+                                                                <li class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><a href="javascript:void(0)" data-toggle="tooltip" data-placement="top" title="Quick View"><i
+                                                                        class="ion-android-open"></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="product-content">
+                                                        <div class="product-desc_info">
+                                                            <div class="rating-box">
+                                                                <ul>
+                                                                    <li><i class="ion-android-star"></i></li>
+                                                                    <li><i class="ion-android-star"></i></li>
+                                                                    <li><i class="ion-android-star"></i></li>
+                                                                    <li class="silver-color"><i class="ion-android-star"></i></li>
+                                                                    <li class="silver-color"><i class="ion-android-star"></i></li>
+                                                                </ul>
+                                                            </div>
+                                                            <h6><a class="product-name" href="#"><?= $related['carName']?></a></h6>
+                                                            <div class="price-box">
+                                                                <span class="new-price">From $<?= $related['carPrice']?></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product-slide_item">
-                                <div class="inner-slide">
-                                    <div class="single-product">
-                                        <div class="product-img">
-                                            <a href="#">
-                                                <img src="uploads/RAV4_2004_black/5.jpg" alt="TXL">
-                                                
-                                            </a>
-                                            <span class="sticker">New</span>
-                                            <div class="add-actions">
-                                                <ul>
-                                                    <li><a class="uren-add_cart" href="cart.html" data-toggle="tooltip" data-placement="top" title="Add To Cart"><i class="ion-bag"></i></a>
-                                                    </li>
-                                                    <li><a class="uren-wishlist" href="wishlist.html" data-toggle="tooltip" data-placement="top" title="Add To Wishlist"><i class="ion-android-favorite-outline"></i></a>
-                                                    </li>
-                                                    <li><a class="uren-add_compare" href="compare.html" data-toggle="tooltip" data-placement="top" title="Compare This Product"><i
-                                                            class="ion-android-options"></i></a>
-                                                    </li>
-                                                    <li class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><a href="javascript:void(0)" data-toggle="tooltip" data-placement="top" title="Quick View"><i
-                                                            class="ion-android-open"></i></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="product-content">
-                                            <div class="product-desc_info">
-                                                <div class="rating-box">
-                                                    <ul>
-                                                        <li><i class="ion-android-star"></i></li>
-                                                        <li><i class="ion-android-star"></i></li>
-                                                        <li><i class="ion-android-star"></i></li>
-                                                        <li><i class="ion-android-star"></i></li>
-                                                        <li class="silver-color"><i class="ion-android-star"></i></li>
-                                                    </ul>
-                                                </div>
-                                                <h6><a class="product-name" href="#">RAV4 2004 black</a></h6>
-                                                <div class="price-box">
-                                                    <span class="new-price">$175.00</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product-slide_item">
-                                <div class="inner-slide">
-                                    <div class="single-product">
-                                        <div class="product-img">
-                                            <a href="#">
-                                                <img src="uploads/RAV_2007_BLUE/1.jpg" alt="RAV_2007_BLUE">
-                                                
-                                            </a>
-                                            <div class="sticker-area-2">
-                                                <span class="sticker-2">-5%</span>
-                                                <span class="sticker">New</span>
-                                            </div>
-                                            <div class="add-actions">
-                                                <ul>
-                                                    <li><a class="uren-add_cart" href="cart.html" data-toggle="tooltip" data-placement="top" title="Add To Cart"><i class="ion-bag"></i></a>
-                                                    </li>
-                                                    <li><a class="uren-wishlist" href="wishlist.html" data-toggle="tooltip" data-placement="top" title="Add To Wishlist"><i class="ion-android-favorite-outline"></i></a>
-                                                    </li>
-                                                    <li><a class="uren-add_compare" href="compare.html" data-toggle="tooltip" data-placement="top" title="Compare This Product"><i
-                                                            class="ion-android-options"></i></a>
-                                                    </li>
-                                                    <li class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><a href="javascript:void(0)" data-toggle="tooltip" data-placement="top" title="Quick View"><i
-                                                            class="ion-android-open"></i></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="product-content">
-                                            <div class="product-desc_info">
-                                                <div class="rating-box">
-                                                    <ul>
-                                                        <li><i class="ion-android-star"></i></li>
-                                                        <li><i class="ion-android-star"></i></li>
-                                                        <li><i class="ion-android-star"></i></li>
-                                                        <li class="silver-color"><i class="ion-android-star"></i></li>
-                                                        <li class="silver-color"><i class="ion-android-star"></i></li>
-                                                    </ul>
-                                                </div>
-                                                <h6><a class="product-name" href="#">RAV_2007_BLUE</a></h6>
-                                                <div class="price-box">
-                                                    <span class="new-price new-price-2">$145.00</span>
-                                                    <span class="old-price">$190.00</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product-slide_item">
-                                <div class="inner-slide">
-                                    <div class="single-product">
-                                        <div class="product-img">
-                                            <a href="#">
-                                                <img src="uploads/corolla_altis/1.jpg" alt="corolla_altis">
-                                                
-                                            </a>
-                                            <span class="sticker">New</span>
-                                            <div class="add-actions">
-                                                <ul>
-                                                    <li><a class="uren-add_cart" href="cart.html" data-toggle="tooltip" data-placement="top" title="Add To Cart"><i class="ion-bag"></i></a>
-                                                    </li>
-                                                    <li><a class="uren-wishlist" href="wishlist.html" data-toggle="tooltip" data-placement="top" title="Add To Wishlist"><i class="ion-android-favorite-outline"></i></a>
-                                                    </li>
-                                                    <li><a class="uren-add_compare" href="compare.html" data-toggle="tooltip" data-placement="top" title="Compare This Product"><i
-                                                            class="ion-android-options"></i></a>
-                                                    </li>
-                                                    <li class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><a href="javascript:void(0)" data-toggle="tooltip" data-placement="top" title="Quick View"><i
-                                                            class="ion-android-open"></i></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="product-content">
-                                            <div class="product-desc_info">
-                                                <div class="rating-box">
-                                                    <ul>
-                                                        <li><i class="ion-android-star"></i></li>
-                                                        <li><i class="ion-android-star"></i></li>
-                                                        <li><i class="ion-android-star"></i></li>
-                                                        <li class="silver-color"><i class="ion-android-star"></i></li>
-                                                        <li class="silver-color"><i class="ion-android-star"></i></li>
-                                                    </ul>
-                                                </div>
-                                                <h6><a class="product-name" href="#">RAV_2007_BLUE</a></h6>
-                                                <div class="price-box">
-                                                    <span class="new-price">$130.00</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product-slide_item">
-                                <div class="inner-slide">
-                                    <div class="single-product">
-                                        <div class="product-img">
-                                            <a href="#">
-                                                <img src="uploads/COROLLA_verso_2002_voiture/1.jpg" alt="corolla_altis">
-                                                
-                                            </a>
-                                            <div class="sticker-area-2">
-                                                <span class="sticker-2">-15%</span>
-                                                <span class="sticker">New</span>
-                                            </div>
-                                            <div class="add-actions">
-                                                <ul>
-                                                    <li><a class="uren-add_cart" href="cart.html" data-toggle="tooltip" data-placement="top" title="Add To Cart"><i class="ion-bag"></i></a>
-                                                    </li>
-                                                    <li><a class="uren-wishlist" href="wishlist.html" data-toggle="tooltip" data-placement="top" title="Add To Wishlist"><i class="ion-android-favorite-outline"></i></a>
-                                                    </li>
-                                                    <li><a class="uren-add_compare" href="compare.html" data-toggle="tooltip" data-placement="top" title="Compare This Product"><i
-                                                            class="ion-android-options"></i></a>
-                                                    </li>
-                                                    <li class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><a href="javascript:void(0)" data-toggle="tooltip" data-placement="top" title="Quick View"><i
-                                                            class="ion-android-open"></i></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="product-content">
-                                            <div class="product-desc_info">
-                                                <div class="rating-box">
-                                                    <ul>
-                                                        <li><i class="ion-android-star"></i></li>
-                                                        <li><i class="ion-android-star"></i></li>
-                                                        <li class="silver-color"><i class="ion-android-star"></i></li>
-                                                        <li class="silver-color"><i class="ion-android-star"></i></li>
-                                                        <li class="silver-color"><i class="ion-android-star"></i></li>
-                                                    </ul>
-                                                </div>
-                                                <h6><a class="product-name" href="#">COROLLA VERSO 2002 VOITURE</a></h6>
-                                                <div class="price-box">
-                                                    <span class="new-price new-price-2">$240.00</span>
-                                                    <span class="old-price">$320.00</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                                       <?php
+                                    $var++;}
+                                }
+                            ?>
                             
                         </div>
                     </div>
@@ -712,8 +499,8 @@
 -->
 
         <!-- Main JS -->
-        <script src="assets/js/main.js"></script>
-    <script src="js/vendor/jquery-2.2.4.min.js"></script>
+            <script src="assets/js/main.js"></script>
+            <script src="js/vendor/jquery-2.2.4.min.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
             <script src="js/vendor/bootstrap.min.js"></script>          
             <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>

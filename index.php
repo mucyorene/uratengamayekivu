@@ -169,49 +169,49 @@
 					<div class="card">
 						<div class="card-body">
 							<div class="row">
-							<?php
-								$query = mysqli_query($conn,"SELECT *FROM car_rent ORDER BY carId DESC") or die(mysqli_error($conn));
-								if (mysqli_num_rows($query)>0) {
-									$a = 1;
-									while ($row = mysqli_fetch_array($query)) {
-									?>
-										<div class="col-lg-4 col-md-6">
-											<div class="single-feature1">
-												<div class="feature-image">
-												<img src="admin/media/imagesRent/<?php echo $row['thumbnail'];?>" alt="corolla_altis">
-													<div class="feature-overlay">
-														<div class="display-table">
-															<div class="display-tablecell">
-															<a  href="car_details"><i class="icofont-car"></i></a>
-															<a href="car_details?ids=<?php echo $row['carId']?>"><i title="Book this car" class="icofont icofont-link"></i></a>
-															</div>
+								<?php
+									$query = mysqli_query($conn,"SELECT *FROM car_rent ORDER BY carId DESC limit 3") or die(mysqli_error($conn));
+									if (mysqli_num_rows($query)>0) {
+										$a = 1;
+										while ($row = mysqli_fetch_array($query)) {
+										?>
+											<div class="col-lg-4 col-md-6">
+												<div class="single-feature1">
+													<div class="feature-image">
+													<img src="admin/media/imagesRent/<?php echo $row['thumbnail'];?>" alt="corolla_altis">
+														<div class="feature-overlay">
+															<div class="display-table">
+																<div class="display-tablecell">
+																<a  href="car_details"><i class="icofont-car"></i></a>
+																<a href="car_details?ids=<?php echo $row['carId']?>"><i title="Book this car" class="icofont icofont-link"></i></a>
+																</div>
 
+															</div>
 														</div>
 													</div>
-												</div>
-												<div class="feature-middle">
-													<span><i class="icofont icofont-company"></i><?= $row['carTransimission']?></span>
-													<span><i class="icofont icofont-glue-oil"></i><?= $row['kmPerLitre']?> KM/L</span>
-													<span><i class="icofont icofont-paper-plane"></i><?= $row['carSeats']?> Seats</span>
-													<span><i class="icofont icofont-energy-water"></i><?= $row['carAirCondition']?></span>
-													<span><i class="icofont icofont-dollar"></i>From <?= $row['carPrice']?></i>$</span>
-												</div>
-												<div class="feature-bottom">
-													<h5><?= $row['carName']?><a style="text-decoration: none;color: grey;" data-toggle="collapse" href="#collapse<?= $row['carId']?>" role="button" aria-expanded="false" aria-controls="collapseExample">
-														<i class="icofont-plus-circle"></i>
-													</a></h5>
-													<div class="collapse" id="collapse<?= $row['carId']?>">
-													<div class="card card-body">
-														<?php echo $row['carDesc'];?>
+													<div class="feature-middle">
+														<span><i class="icofont icofont-company"></i><?= $row['carTransimission']?></span>
+														<span><i class="icofont icofont-glue-oil"></i><?= $row['kmPerLitre']?> KM/L</span>
+														<span><i class="icofont icofont-paper-plane"></i><?= $row['carSeats']?> Seats</span>
+														<span><i class="icofont icofont-energy-water"></i><?= $row['carAirCondition']?></span>
+														<span><i class="icofont icofont-dollar"></i>From <?= $row['carPrice']?></i>$</span>
 													</div>
-													</div>	
+													<div class="feature-bottom">
+														<h5><?= $row['carName']?><a style="text-decoration: none;color: grey;" data-toggle="collapse" href="#collapse<?= $row['carId']?>" role="button" aria-expanded="false" aria-controls="collapseExample">
+															<i class="icofont-plus-circle"></i>
+														</a></h5>
+														<div class="collapse" id="collapse<?= $row['carId']?>">
+														<div class="card card-body">
+															<?php echo $row['carDesc'];?>
+														</div>
+														</div>	
+													</div>
 												</div>
 											</div>
-										</div>
-									<?php
-									$a++;}
-								}
-							?>
+										<?php
+										$a++;}
+									}
+								?>
 								<!-- <div class="col-lg-4 col-md-6">
 									<div class="single-feature1">
 										<div class="feature-image">
@@ -289,10 +289,18 @@
 										</div>
 									</div>
 								</div> -->
+								<div class="col-md-12">
+									<div class="row">
+										<div class="col-md-6"></div>
+										<div class="col-md-6">
+											<h4><a href="cars_for_rent?forRent=1">--More--</a></h4>
+										</div>										
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
-
+					
 				</div>	
 			</section>
 			<section class="blog-area section-gap" id="cars2">
@@ -307,7 +315,7 @@
 					</div>				
 					<div class="row">
 					
-							<!-- <div class="col-lg-4 col-md-6">
+							<div class="col-lg-4 col-md-6">
 								<div class="single-feature1">
 									<div class="feature-image">
 									   	<img src="uploads/RAV4_2004_black/5.jpg" alt="TXL">
@@ -338,7 +346,7 @@
 										  </div>
 										</div>	
 									</div>
-							</div> -->
+							</div>
 							<!-- </div> -->
 							<!-- <div class="col-lg-4 col-md-6">
 								<div class="single-feature1">
