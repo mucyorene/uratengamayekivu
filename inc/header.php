@@ -70,7 +70,7 @@
 						<li><a href="">For sale</a></li>
 					</ul>
 					</li>
-					<li <?php if (isset($_GET['tourPackages'])) { echo "class='active'";}?>><a <?php if (isset($_GET['tourPackages'])) { echo "class='active'";}?> href="tour_packages?tourPackages=1">Tour Packages</a></li>	
+					<!-- <li <?php //if (isset($_GET['tourPackages'])) { echo "class='active'";}?>><a <?php //if (isset($_GET['tourPackages'])) { echo "class='active'";}?> href="tour_packages?tourPackages=1">Tour Packages</a></li>	 -->
 					<li <?php if (isset($_GET['others'])) { echo "class='active'";}?>><a <?php if (isset($_GET['others'])) { echo "class='active'";}?> href="other?others=1">Other services</a></li>
 					<li <?php if (isset($_GET['airPort'])) { echo "class='active'";}?>><a <?php if (isset($_GET['airPort'])) { echo "class='active'";}?> href="airport_pickup?airPort=1">Airport pickup</a></li>	
 					

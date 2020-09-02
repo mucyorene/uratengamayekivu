@@ -123,6 +123,10 @@
 			<li class="nav-item">
 				<a href="#menu3" class="nav-link" data-toggle='pill'>Small cars</a>
 			</li>
+
+			<li class="nav-item">
+				<a href="#menu4" class="nav-link" data-toggle='pill'>Vans & Trucks</a>
+			</li>
 		</ul>
 
 		<div class="tab-content">
@@ -578,6 +582,53 @@
 				</div>
 				</div>
 			</div>
+
+			<div id="menu4" class="container tab-pane active">
+				<div class="card-body">
+				<h3>Premium cars</h3>
+
+				<div class="row">
+					<div class="col-lg-4 col-md-6">
+						<div class="single-feature1">
+							<div class="feature-image">
+								<img src="uploads/land_cruiser_v8/1.jpg" alt="Land Cruiser">
+								<div class="feature-overlay">
+									<div class="display-table">
+										<div class="display-tablecell">
+											<a  href="car_details"><i class="icofont-car"></i></a>
+											<a href="car_details"><i title="Book this car" class="icofont icofont-link"></i></a>
+										</div>
+
+									</div>
+								</div>
+							</div>
+							<div class="feature-middle">
+								<span><i class="icofont-car"></i>30,000</span>
+								<span><i class="icofont icofont-glue-oil"></i>20kmpl</span>
+								<span><i class="icofont icofont-company"></i>Automatic</span>
+								<span><i class="icofont icofont-paper-plane"></i>Model: 2018</span>
+								<span><i class="icofont icofont-energy-water"></i>27hp</span>
+								<span><i class="icofont icofont-dollar"></i>From 27.368</span>
+								<label class="text-danger text-uppercase text-bold text-center">Available </label>
+							</div>
+							<div class="feature-bottom text-uppercase">
+								<h5>land cruiser v8<a style="text-decoration: none;color: grey;" data-toggle="collapse" href="#collapse3" role="button" aria-expanded="false" aria-controls="collapseExample">
+									<i class="icofont-plus-circle"></i>
+									</a></h5>
+								
+									
+								
+								<div class="collapse" id="collapse3">
+									<div class="card card-body">
+									This car has got a very high speed rate and oill consuming is not huges
+									</div>
+								</div>	
+							</div>
+						</div>
+					</div>
+				</div>
+				</div>
+			</div>
 		</div>
 		</div>	
 	</div>
@@ -591,7 +642,7 @@
 <!-- start footer Area -->		
 		<?php require_once("inc/footer.php")?>
 			<!-- End footer Area -->
-<script src="js/vendor/jquery-2.2.4.min.js"></script>
+			<script src="js/vendor/jquery-2.2.4.min.js"></script>
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 			<script src="js/vendor/bootstrap.min.js"></script>			
 			<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>

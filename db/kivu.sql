@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 02, 2020 at 12:00 AM
+-- Generation Time: Sep 02, 2020 at 05:04 PM
 -- Server version: 10.1.26-MariaDB
 -- PHP Version: 7.1.8
 
@@ -65,7 +65,7 @@ CREATE TABLE `airportservices` (
 --
 
 INSERT INTO `airportservices` (`id`, `carId`, `driveType`, `numberOfpickups`, `picDate`, `names`, `email`, `phoneNumber`, `bookingNumber`) VALUES
-(1, 4, 'no', 'Pickup Three', '09/22/2020', 'Rene MUCYO TUYISENGE', 'renemucyomucici@gmail.com', '0784494820', '#4078449482009/22/2020');
+(1, 5, 'yes', 'Pickup Two', '02/26/2021', 'Rene MUCYO TUYISENGE', 'renemucyomucici@gmail.com', '0784494820', '#5078449482002/26/2021');
 
 -- --------------------------------------------------------
 
@@ -87,13 +87,6 @@ CREATE TABLE `carrentbookings` (
   `carId` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `carrentbookings`
---
-
-INSERT INTO `carrentbookings` (`id`, `numberOfCars`, `datePickedUp`, `numberOfDropOffs`, `dateReturned`, `names`, `email`, `phoneNumber`, `streetNumber`, `bookingCode`, `carId`) VALUES
-(1, 'Pickup Two', '09/10/2020', 'Drop off Two', '09/26/2020', 'Rene MUCYO TUYISENGE', 'renemucyomucici@gmail.com', '0784494820', 'INTWALI', '#09/26/2020078449482009/10/2020', 8);
-
 -- --------------------------------------------------------
 
 --
@@ -112,6 +105,7 @@ CREATE TABLE `car_rent` (
   `carPrice` int(11) NOT NULL,
   `carType` varchar(255) NOT NULL,
   `carDesc` varchar(255) NOT NULL,
+  `trucks` varchar(100) NOT NULL,
   `thumbnail` varchar(255) NOT NULL,
   `photo1` varchar(255) NOT NULL,
   `photo2` varchar(255) NOT NULL,
@@ -124,14 +118,14 @@ CREATE TABLE `car_rent` (
 -- Dumping data for table `car_rent`
 --
 
-INSERT INTO `car_rent` (`carId`, `carName`, `carTransimission`, `carAirCondition`, `carSeats`, `kmPerLitre`, `doors`, `fuelType`, `carPrice`, `carType`, `carDesc`, `thumbnail`, `photo1`, `photo2`, `photo3`, `photo4`, `photo5`) VALUES
-(2, 'HONDA', 'Manual', 'Yes', 8, 69, 5, 'Diesel', 120000, 'Large', 'This is car mostly rent by people for America, where it\' s popular at their zone', 'honda1.jpg', 'honda2.jpg', 'honda3.jpg', 'honda4.jpg', 'honda3.jpg', 'honda6.jpg'),
-(3, 'Landcruser V8', 'Automatic', 'Yes', 10, 70, 6, 'Diesel', 170000, 'Large', 'Best and VIP CAR suitable for Rwanda and other officials from outside,', 'landcruserV84.jpg', 'landcruserV82.jpg', 'landcruserV81.jpg', 'landcruserV84.jpg', 'landcruserV85.jpg', 'landcruserV82.jpg'),
-(4, 'RAVA 4 BLUE', 'Automatic', 'Yes', 4, 45, 5, 'Fuel', 50000, 'Premium', 'Yes premium', 'blue3.jpg', 'blue1.jpg', 'blue2.jpg', 'blue3.jpg', 'blue4.jpg', 'blue4.jpg'),
-(5, 'TOYOTA COROLLA VERSO mini MPV_5_2004', 'Manual', '', 4, 124, 4, '', 35000, 'Small', 'Small Car to travel with your family sans problem', 'Colora verso.jpg', 'TOYOTA_COROLLA VERSO_mini MPV_5_2004.jpg', 'TOYOTA-Corolla-Verso-647_26.jpg', 'TOYOTA-Corolla-Verso-647_29.jpg', 'TOYOTA_COROLLA VERSO_mini MPV_5_2004.jpg', 'Colora verso.jpg'),
-(7, 'Corolla Altis', 'Automatic', 'Yes', 4, 35, 5, 'Diesel', 60000, 'Medium', 'Great voiture for fam', 'd687725d-b-17d2.jpg', '04812041990003.jpg', 'altis1.jpg', 'd9feb204-4-d36e.jpg', 'd687725d-b-17d2.jpg', '04812041990003.jpg'),
-(8, 'TXR', 'Automatic', '', 10, 70, 6, '', 119981, 'Premium', 'VIP CAR FOR OFFICIAL', 'txr_thumb.jpg', 'txr_3.jpg', 'txr_2.jpg', 'txr_4.jpg', 'txr_1.jpg', 'txr_3.jpg'),
-(9, 'RAV4 2004 black', 'Automatic', 'Yes', 4, 89, 5, 'Fuel', 77000, 'Medium', 'Hello Rava we want you', '1.jpg', '6.jpg', '4.jfif', '2.jpg', '3.jpg', '5.jpg');
+INSERT INTO `car_rent` (`carId`, `carName`, `carTransimission`, `carAirCondition`, `carSeats`, `kmPerLitre`, `doors`, `fuelType`, `carPrice`, `carType`, `carDesc`, `trucks`, `thumbnail`, `photo1`, `photo2`, `photo3`, `photo4`, `photo5`) VALUES
+(3, 'Landcruser V8', 'Automatic', 'Yes', 10, 70, 6, 'Diesel', 170000, 'Large', 'Best and VIP CAR suitable for Rwanda and other officials from outside,', '', 'landcruserV84.jpg', 'landcruserV82.jpg', 'landcruserV81.jpg', 'landcruserV84.jpg', 'landcruserV85.jpg', 'landcruserV82.jpg'),
+(4, 'RAVA 4 BLUE', 'Automatic', 'Yes', 4, 45, 5, 'Fuel', 50000, 'Premium', 'Yes premium', '', 'blue3.jpg', 'blue1.jpg', 'blue2.jpg', 'blue3.jpg', 'blue4.jpg', 'blue4.jpg'),
+(5, 'TOYOTA COROLLA VERSO mini MPV_5_2004', 'Manual', '', 4, 124, 4, '', 35000, 'Small', 'Small Car to travel with your family sans problem', '', 'Colora verso.jpg', 'TOYOTA_COROLLA VERSO_mini MPV_5_2004.jpg', 'TOYOTA-Corolla-Verso-647_26.jpg', 'TOYOTA-Corolla-Verso-647_29.jpg', 'TOYOTA_COROLLA VERSO_mini MPV_5_2004.jpg', 'Colora verso.jpg'),
+(7, 'Corolla Altis', 'Automatic', 'Yes', 4, 35, 5, 'Diesel', 60000, 'Medium', 'Great voiture for fam', '', 'd687725d-b-17d2.jpg', '04812041990003.jpg', 'altis1.jpg', 'd9feb204-4-d36e.jpg', 'd687725d-b-17d2.jpg', '04812041990003.jpg'),
+(8, 'TXR', 'Automatic', '', 10, 70, 6, '', 119981, 'Premium', 'VIP CAR FOR OFFICIAL', '', 'txr_thumb.jpg', 'txr_3.jpg', 'txr_2.jpg', 'txr_4.jpg', 'txr_1.jpg', 'txr_3.jpg'),
+(9, 'RAV4 2004 black', 'Automatic', 'Yes', 4, 89, 5, 'Fuel', 77000, 'Medium', 'Hello Rava we want you', '', '1.jpg', '6.jpg', '4.jfif', '2.jpg', '3.jpg', '5.jpg'),
+(10, 'RAV4 2006 KAKI', 'Manual', '', 5, 118, 5, '', 12780, 'Vans And Trucks', 'Yes Rwanda', '', 'ravakaki2.jpg', 'ravakaki1.jpg', 'ravakaki3.jpg', 'ravakaki2.jpg', 'ravakaki1.jpg', 'ravakaki3.jpg');
 
 -- --------------------------------------------------------
 
@@ -212,12 +206,12 @@ ALTER TABLE `airportservices`
 -- AUTO_INCREMENT for table `carrentbookings`
 --
 ALTER TABLE `carrentbookings`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `car_rent`
 --
 ALTER TABLE `car_rent`
-  MODIFY `carId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `carId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT for table `contact`
 --
@@ -231,13 +225,13 @@ ALTER TABLE `contact`
 -- Constraints for table `airportservices`
 --
 ALTER TABLE `airportservices`
-  ADD CONSTRAINT `carFk` FOREIGN KEY (`carId`) REFERENCES `car_rent` (`carId`);
+  ADD CONSTRAINT `carFk` FOREIGN KEY (`carId`) REFERENCES `car_rent` (`carId`) ON DELETE CASCADE;
 
 --
 -- Constraints for table `carrentbookings`
 --
 ALTER TABLE `carrentbookings`
-  ADD CONSTRAINT `carFks` FOREIGN KEY (`carId`) REFERENCES `car_rent` (`carId`);
+  ADD CONSTRAINT `carFks` FOREIGN KEY (`carId`) REFERENCES `car_rent` (`carId`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

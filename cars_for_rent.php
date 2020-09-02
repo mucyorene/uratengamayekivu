@@ -39,7 +39,7 @@
 			<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">			
 			<link rel="stylesheet" href="css/owl.carousel.css">
 			<!-- Main style CSS -->
-		<link rel="stylesheet" type="text/css" href="css/list.css" media="all" />
+			<link rel="stylesheet" type="text/css" href="css/list.css" media="all" />
 			<link rel="stylesheet" href="css/main.css">
 			
 			<link href="font/css/all.css" rel="stylesheet"> 
@@ -104,83 +104,36 @@
 					</div>
 	<div class="container">
 
-		
-		<div class="card">		
-		<ul class="nav nav-tabs" role="tablist" >
-			<li class="nav-item">
-				<a href="#menu0" class="nav-link active" data-toggle='pill'>Premium cars</a>
-			</li>
-			<li class="nav-item">
-				<a href="#menu1" class="nav-link" data-toggle='pill'>Large cars</a>
-			</li>
-			<li class="nav-item">
-				<a href="#menu2" class="nav-link" data-toggle='pill'>Medium cars</a>
-			</li>
+		<div class="card">
+			
+			<ul class="nav nav-tabs" role="tablist" >
+				<li class="nav-item">
+					<a href="#menu0" class="nav-link active" data-toggle='pill'>Premium cars</a>
+				</li>
+				<li class="nav-item">
+					<a href="#menu1" class="nav-link" data-toggle='pill'>Large cars</a>
+				</li>
+				<li class="nav-item">
+					<a href="#menu2" class="nav-link" data-toggle='pill'>Medium cars</a>
+				</li>
 
-			<li class="nav-item">
-				<a href="#menu3" class="nav-link" data-toggle='pill'>Small cars</a>
-			</li>
-		</ul>
+				<li class="nav-item">
+					<a href="#menu3" class="nav-link" data-toggle='pill'>Small cars</a>
+				</li>
 
-		<div class="tab-content">
-			<div id="menu0" class="container tab-pane active">
-				<div class="card-body">
-				<h3>Premium cars</h3>
+				<li class="nav-item">
+					<a href="#menu4" class="nav-link" data-toggle='pill'>Vans & Trucks</a>
+				</li>
+			</ul>
 
-				<div class="row">
-					<?php 
-						$preQuery = mysqli_query($conn,"SELECT *FROM car_rent WHERE carType='Premium' ORDER BY carId DESC") or die(mysqli_error($conn));
-						if(mysqli_num_rows($preQuery)>0){
-							while ($rowPre = mysqli_fetch_array($preQuery)) {
-								?>
-									<div class="col-lg-4 col-md-6">
-										<div class="single-feature1">
-											<div class="feature-image">
-												<img src="admin/media/imagesRent/<?= $rowPre['thumbnail']?>" alt="Land Cruiser">
-												<div class="feature-overlay">
-													<div class="display-table">
-														<div class="display-tablecell">
-															<a  href="car_details"><i class="icofont-car"></i></a>
-															<a href="car_details?ids=<?= $rowPre['carId'];?>"><i title="Book this car" class="icofont icofont-link"></i></a>
-														</div>
+			<div class="tab-content">
+				<div id="menu0" class="container tab-pane active">
+					<div class="card-body">
+					<h3>Premium cars</h3>
 
-													</div>
-												</div>
-											</div>
-											<div class="feature-middle">
-													<span><i class="icofont icofont-company"></i><?= $rowPre['carTransimission']?></span>
-													<span><i class="icofont icofont-glue-oil"></i><?= $rowPre['kmPerLitre']?> KM/L</span>
-													<span><i class="icofont icofont-paper-plane"></i><?= $rowPre['carSeats']?> Seats</span>
-													<span><i class="icofont icofont-energy-water"></i><?= $rowPre['carAirCondition']?></span>
-													<span><i class="icofont icofont-dollar"></i>From <?= $rowPre['carPrice']?></i>$</span>
-												<!-- <label class="text-danger text-uppercase text-bold text-center">Available </label> -->
-											</div>
-											<div class="feature-bottom text-uppercase">
-												<h5><?= $rowPre['carName']?><a style="text-decoration: none;color: grey;" data-toggle="collapse" href="#collapse<?= $rowPre['carId']?>" role="button" aria-expanded="false" aria-controls="collapseExample">
-													<i class="icofont-plus-circle"></i>
-													</a></h5>
-												<div class="collapse" id="collapse<?= $rowPre['carId']?>">
-													<div class="card card-body">
-														<?= $rowPre['carDesc']?></i>
-													</div>
-												</div>	
-											</div>
-										</div>
-									</div>
-								<?php
-							}
-						}
-					?>
-				</div>
-				</div>
-			</div>
-
-			<div id="menu1" class="container tab-pane fade">
-				<div class="card-body">
-					<h3>Large cars</h3>
 					<div class="row">
 						<?php 
-							$preQuery = mysqli_query($conn,"SELECT *FROM car_rent WHERE carType='Large'  ORDER BY carId DESC") or die(mysqli_error($conn));
+							$preQuery = mysqli_query($conn,"SELECT *FROM car_rent WHERE carType='Premium' ORDER BY carId DESC") or die(mysqli_error($conn));
 							if(mysqli_num_rows($preQuery)>0){
 								while ($rowPre = mysqli_fetch_array($preQuery)) {
 									?>
@@ -199,11 +152,11 @@
 													</div>
 												</div>
 												<div class="feature-middle">
-													<span><i class="icofont icofont-company"></i><?= $rowPre['carTransimission']?></span>
-													<span><i class="icofont icofont-glue-oil"></i><?= $rowPre['kmPerLitre']?> KM/L</span>
-													<span><i class="icofont icofont-paper-plane"></i><?= $rowPre['carSeats']?> Seats</span>
-													<span><i class="icofont icofont-energy-water"></i><?= $rowPre['carAirCondition']?></span>
-													<span><i class="icofont icofont-dollar"></i>From <?= $rowPre['carPrice']?></i>$</span>
+														<span><i class="icofont icofont-company"></i><?= $rowPre['carTransimission']?></span>
+														<span><i class="icofont icofont-glue-oil"></i><?= $rowPre['kmPerLitre']?> KM/L</span>
+														<span><i class="icofont icofont-paper-plane"></i><?= $rowPre['carSeats']?> Seats</span>
+														<span><i class="icofont icofont-energy-water"></i><?= $rowPre['carAirCondition']?></span>
+														<span><i class="icofont icofont-dollar"></i>From <?= $rowPre['carPrice']?></i>$</span>
 													<!-- <label class="text-danger text-uppercase text-bold text-center">Available </label> -->
 												</div>
 												<div class="feature-bottom text-uppercase">
@@ -223,65 +176,66 @@
 							}
 						?>
 					</div>
+					</div>
 				</div>
-			</div>
-			<div id="menu2" class="container tab-pane fade">
-				<div class="card-body">
-					<h3>Medium cars</h3>
-					<div class="row">
-					<?php 
-						$preQuery = mysqli_query($conn,"SELECT *FROM car_rent WHERE carType='Medium' ORDER BY carId DESC") or die(mysqli_error($conn));
-						if(mysqli_num_rows($preQuery)>0){
-							while ($rowPre = mysqli_fetch_array($preQuery)) {
-								?>
-									<div class="col-lg-4 col-md-6">
-										<div class="single-feature1">
-											<div class="feature-image">
-												<img src="admin/media/imagesRent/<?= $rowPre['thumbnail']?>" alt="Land Cruiser">
-												<div class="feature-overlay">
-													<div class="display-table">
-														<div class="display-tablecell">
-															<a  href="car_details"><i class="icofont-car"></i></a>
-															<a href="car_details?ids=<?= $rowPre['carId'];?>"><i title="Book this car" class="icofont icofont-link"></i></a>
-														</div>
 
+				<div id="menu1" class="container tab-pane fade">
+					<div class="card-body">
+						<h3>Large cars</h3>
+						<div class="row">
+							<?php 
+								$preQuery = mysqli_query($conn,"SELECT *FROM car_rent WHERE carType='Large'  ORDER BY carId DESC") or die(mysqli_error($conn));
+								if(mysqli_num_rows($preQuery)>0){
+									while ($rowPre = mysqli_fetch_array($preQuery)) {
+										?>
+											<div class="col-lg-4 col-md-6">
+												<div class="single-feature1">
+													<div class="feature-image">
+														<img src="admin/media/imagesRent/<?= $rowPre['thumbnail']?>" alt="Land Cruiser">
+														<div class="feature-overlay">
+															<div class="display-table">
+																<div class="display-tablecell">
+																	<a  href="car_details"><i class="icofont-car"></i></a>
+																	<a href="car_details?ids=<?= $rowPre['carId'];?>"><i title="Book this car" class="icofont icofont-link"></i></a>
+																</div>
+
+															</div>
+														</div>
+													</div>
+													<div class="feature-middle">
+														<span><i class="icofont icofont-company"></i><?= $rowPre['carTransimission']?></span>
+														<span><i class="icofont icofont-glue-oil"></i><?= $rowPre['kmPerLitre']?> KM/L</span>
+														<span><i class="icofont icofont-paper-plane"></i><?= $rowPre['carSeats']?> Seats</span>
+														<span><i class="icofont icofont-energy-water"></i><?= $rowPre['carAirCondition']?></span>
+														<span><i class="icofont icofont-dollar"></i>From <?= $rowPre['carPrice']?></i>$</span>
+														<!-- <label class="text-danger text-uppercase text-bold text-center">Available </label> -->
+													</div>
+													<div class="feature-bottom text-uppercase">
+														<h5><?= $rowPre['carName']?><a style="text-decoration: none;color: grey;" data-toggle="collapse" href="#collapse<?= $rowPre['carId']?>" role="button" aria-expanded="false" aria-controls="collapseExample">
+															<i class="icofont-plus-circle"></i>
+															</a></h5>
+														<div class="collapse" id="collapse<?= $rowPre['carId']?>">
+															<div class="card card-body">
+																<?= $rowPre['carDesc']?></i>
+															</div>
+														</div>	
 													</div>
 												</div>
 											</div>
-											<div class="feature-middle">
-													<span><i class="icofont icofont-company"></i><?= $rowPre['carTransimission']?></span>
-													<span><i class="icofont icofont-glue-oil"></i><?= $rowPre['kmPerLitre']?> KM/L</span>
-													<span><i class="icofont icofont-paper-plane"></i><?= $rowPre['carSeats']?> Seats</span>
-													<span><i class="icofont icofont-energy-water"></i><?= $rowPre['carAirCondition']?></span>
-													<span><i class="icofont icofont-dollar"></i>From <?= $rowPre['carPrice']?></i>$</span>
-												<!-- <label class="text-danger text-uppercase text-bold text-center">Available </label> -->
-											</div>
-											<div class="feature-bottom text-uppercase">
-												<h5><?= $rowPre['carName']?><a style="text-decoration: none;color: grey;" data-toggle="collapse" href="#collapse<?= $rowPre['carId']?>" role="button" aria-expanded="false" aria-controls="collapseExample">
-													<i class="icofont-plus-circle"></i>
-													</a></h5>
-												<div class="collapse" id="collapse<?= $rowPre['carId']?>">
-													<div class="card card-body">
-														<?= $rowPre['carDesc']?></i>
-													</div>
-												</div>	
-											</div>
-										</div>
-									</div>
-								<?php
-							}
-						}
-					?>
+										<?php
+									}
+								}
+							?>
+						</div>
+					</div>
 				</div>
-				</div>
-			</div>
 
-			<div id="menu3" class="container tab-pane fade">
-				<div class="card-body">
-					<h3>Small cars</h3>
-					<div class="row">
+				<div id="menu2" class="container tab-pane fade">
+					<div class="card-body">
+						<h3>Medium cars</h3>
+						<div class="row">
 						<?php 
-							$preQuery = mysqli_query($conn,"SELECT *FROM car_rent WHERE carType='small' ORDER BY carId DESC") or die(mysqli_error($conn));
+							$preQuery = mysqli_query($conn,"SELECT *FROM car_rent WHERE carType='Medium' ORDER BY carId DESC") or die(mysqli_error($conn));
 							if(mysqli_num_rows($preQuery)>0){
 								while ($rowPre = mysqli_fetch_array($preQuery)) {
 									?>
@@ -300,11 +254,11 @@
 													</div>
 												</div>
 												<div class="feature-middle">
-													<span><i class="icofont icofont-company"></i><?= $rowPre['carTransimission']?></span>
-													<span><i class="icofont icofont-glue-oil"></i><?= $rowPre['kmPerLitre']?> KM/L</span>
-													<span><i class="icofont icofont-paper-plane"></i><?= $rowPre['carSeats']?> Seats</span>
-													<span><i class="icofont icofont-energy-water"></i><?= $rowPre['carAirCondition']?></span>
-													<span><i class="icofont icofont-dollar"></i>From <b><?= $rowPre['carPrice']?></i></b>$</span>
+														<span><i class="icofont icofont-company"></i><?= $rowPre['carTransimission']?></span>
+														<span><i class="icofont icofont-glue-oil"></i><?= $rowPre['kmPerLitre']?> KM/L</span>
+														<span><i class="icofont icofont-paper-plane"></i><?= $rowPre['carSeats']?> Seats</span>
+														<span><i class="icofont icofont-energy-water"></i><?= $rowPre['carAirCondition']?></span>
+														<span><i class="icofont icofont-dollar"></i>From <?= $rowPre['carPrice']?></i>$</span>
 													<!-- <label class="text-danger text-uppercase text-bold text-center">Available </label> -->
 												</div>
 												<div class="feature-bottom text-uppercase">
@@ -323,11 +277,115 @@
 								}
 							}
 						?>
+					</div>
+					</div>
+				</div>
+
+				<div id="menu3" class="container tab-pane fade">
+					<div class="card-body">
+						<h3>Small cars</h3>
+						<div class="row">
+							<?php 
+								$preQuery = mysqli_query($conn,"SELECT *FROM car_rent WHERE carType='small' ORDER BY carId DESC") or die(mysqli_error($conn));
+								if(mysqli_num_rows($preQuery)>0){
+									while ($rowPre = mysqli_fetch_array($preQuery)) {
+										?>
+											<div class="col-lg-4 col-md-6">
+												<div class="single-feature1">
+													<div class="feature-image">
+														<img src="admin/media/imagesRent/<?= $rowPre['thumbnail']?>" alt="Land Cruiser">
+														<div class="feature-overlay">
+															<div class="display-table">
+																<div class="display-tablecell">
+																	<a  href="car_details"><i class="icofont-car"></i></a>
+																	<a href="car_details?ids=<?= $rowPre['carId'];?>"><i title="Book this car" class="icofont icofont-link"></i></a>
+																</div>
+
+															</div>
+														</div>
+													</div>
+													<div class="feature-middle">
+														<span><i class="icofont icofont-company"></i><?= $rowPre['carTransimission']?></span>
+														<span><i class="icofont icofont-glue-oil"></i><?= $rowPre['kmPerLitre']?> KM/L</span>
+														<span><i class="icofont icofont-paper-plane"></i><?= $rowPre['carSeats']?> Seats</span>
+														<span><i class="icofont icofont-energy-water"></i><?= $rowPre['carAirCondition']?></span>
+														<span><i class="icofont icofont-dollar"></i>From <b><?= $rowPre['carPrice']?></i></b>$</span>
+														<!-- <label class="text-danger text-uppercase text-bold text-center">Available </label> -->
+													</div>
+													<div class="feature-bottom text-uppercase">
+														<h5><?= $rowPre['carName']?><a style="text-decoration: none;color: grey;" data-toggle="collapse" href="#collapse<?= $rowPre['carId']?>" role="button" aria-expanded="false" aria-controls="collapseExample">
+															<i class="icofont-plus-circle"></i>
+															</a></h5>
+														<div class="collapse" id="collapse<?= $rowPre['carId']?>">
+															<div class="card card-body">
+																<?= $rowPre['carDesc']?></i>
+															</div>
+														</div>	
+													</div>
+												</div>
+											</div>
+										<?php
+									}
+								}
+							?>
+						</div>
+					</div>
+				</div>
+				
+				<div id="menu4" class="container tab-pane fade">
+					<div class="card-body">
+						<h3>VANS AND TRUCKS</h3>
+						<div class="row">
+							<?php 
+								$preQuery = mysqli_query($conn,"SELECT *FROM car_rent WHERE carType='Vans And Trucks' ORDER BY carId DESC") or die(mysqli_error($conn));
+								if(mysqli_num_rows($preQuery)>0){
+									while ($rowPre = mysqli_fetch_array($preQuery)) {
+										?>
+											<div class="col-lg-4 col-md-6">
+												<div class="single-feature1">
+													<div class="feature-image">
+														<img src="admin/media/imagesRent/<?= $rowPre['thumbnail']?>" alt="Land Cruiser">
+														<div class="feature-overlay">
+															<div class="display-table">
+																<div class="display-tablecell">
+																	<a  href="car_details"><i class="icofont-car"></i></a>
+																	<a href="car_details?ids=<?= $rowPre['carId'];?>"><i title="Book this car" class="icofont icofont-link"></i></a>
+																</div>
+
+															</div>
+														</div>
+													</div>
+													<div class="feature-middle">
+														<span><i class="icofont icofont-company"></i><?= $rowPre['carTransimission']?></span>
+														<span><i class="icofont icofont-glue-oil"></i><?= $rowPre['kmPerLitre']?> KM/L</span>
+														<span><i class="icofont icofont-paper-plane"></i><?= $rowPre['carSeats']?> Seats</span>
+														<span><i class="icofont icofont-energy-water"></i><?= $rowPre['carAirCondition']?></span>
+														<span><i class="icofont icofont-dollar"></i>From <b><?= $rowPre['carPrice']?></i></b>$</span>
+														<!-- <label class="text-danger text-uppercase text-bold text-center">Available </label> -->
+													</div>
+													<div class="feature-bottom text-uppercase">
+														<h5><?= $rowPre['carName']?><a style="text-decoration: none;color: grey;" data-toggle="collapse" href="#collapse<?= $rowPre['carId']?>" role="button" aria-expanded="false" aria-controls="collapseExample">
+															<i class="icofont-plus-circle"></i>
+															</a></h5>
+														<div class="collapse" id="collapse<?= $rowPre['carId']?>">
+															<div class="card card-body">
+																<?= $rowPre['carDesc']?></i>
+															</div>
+														</div>	
+													</div>
+												</div>
+											</div>
+										<?php
+									}
+								}
+							?>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		</div>	
+
+
 	</div>
 	</section>
 

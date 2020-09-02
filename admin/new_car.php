@@ -234,6 +234,10 @@ require_once("includes/db.php");
                                       <input type="radio" name="car_type" value="Small" class="selectgroup-input-radio">
                                       <span class="selectgroup-button">Small</span>
                                     </label>
+                                    <label class="selectgroup-item">
+                                      <input type="radio" name="car_type" value="Vans And Trucks" class="selectgroup-input-radio">
+                                      <span class="selectgroup-button">Vans And Trucks</span>
+                                    </label>
                                 </div>       
                                 <div class="form-group">
                                   <label>Description</label>
