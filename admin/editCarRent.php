@@ -225,23 +225,23 @@ $id = $_GET['editCar'];
                                             <label class="form-label">Car type</label>
                                             <div class="selectgroup w-100">
                                             <label class="selectgroup-item">
-                                                <input type="radio" name="car_type" value="Premium" class="selectgroup-input-radio" checked>
+                                                <input type="radio" name="car_type" value="Premium" class="selectgroup-input-radio"  <?php if($fet['carType'] == 'Premium'){ echo "checked";}?>>
                                                 <span class="selectgroup-button">Premium</span>
                                             </label>
                                             <label class="selectgroup-item">
-                                                <input type="radio" name="car_type" value="Large" class="selectgroup-input-radio">
+                                                <input type="radio" name="car_type" value="Large" class="selectgroup-input-radio" <?php if($fet['carType'] == 'Large'){ echo "checked";}?>>
                                                 <span class="selectgroup-button">Large</span>
                                             </label>
                                             <label class="selectgroup-item">
-                                                <input type="radio" name="car_type" value="Medium" class="selectgroup-input-radio">
+                                                <input type="radio" name="car_type" value="Medium" class="selectgroup-input-radio" <?php if($fet['carType'] == 'Medium'){ echo "checked";}?>>
                                                 <span class="selectgroup-button">Medium</span>
                                             </label>
                                             <label class="selectgroup-item">
-                                                <input type="radio" name="car_type" value="Small" class="selectgroup-input-radio">
+                                                <input type="radio" name="car_type" value="Small" class="selectgroup-input-radio" <?php if($fet['carType'] == 'Small'){ echo "checked";}?>>
                                                 <span class="selectgroup-button">Small</span>
                                             </label>
                                             <label class="selectgroup-item">
-                                              <input type="radio" name="car_type" value="Vans And Trucks" class="selectgroup-input-radio">
+                                              <input type="radio" name="car_type" value="Vans And Trucks" class="selectgroup-input-radio" <?php if($fet['carType'] == 'Vans And Trucks'){ echo "checked";}?>>
                                               <span class="selectgroup-button">Vans And Trucks</span>
                                             </label>
                                         </div>       
