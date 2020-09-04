@@ -1,7 +1,6 @@
+
 <!DOCTYPE html>
 <html lang="en">
-
-
 <!-- basic-table.html  21 Nov 2019 03:55:20 GMT -->
 <head>
   <meta charset="UTF-8">

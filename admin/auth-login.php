@@ -16,7 +16,6 @@
   <link rel="stylesheet" href="assets/css/custom.css">
   <link rel='shortcut icon' type='image/x-icon' href='assets/img/favicon.ico' />
   <script src="sweetalert.min.js"></script>
-
 </head>
 
 <body>
@@ -28,7 +27,6 @@
         <div class="row">
           <div class="col-12 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-6 offset-lg-3 col-xl-4 offset-xl-4">
             <div class="card card-primary">
-              
               <div class="card-header">
                 <h4>Login</h4>
               </div>
@@ -101,9 +99,5 @@
   <!-- Custom JS File -->
   <script src="assets/js/custom.js"></script>
 </body>
-
-
 <!-- auth-login.html  21 Nov 2019 03:49:32 GMT -->
 </html>
-
-

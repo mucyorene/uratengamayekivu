@@ -217,7 +217,7 @@ require_once("includes/db.php");
     <script src="assets/bundles/datatables/datatables.min.js"></script>
   <script src="assets/bundles/datatables/DataTables-1.10.16/js/dataTables.bootstrap4.min.js"></script>
   <script src="assets/js/page/datatables.js"></script>
- <script src="assets/js/app.min.js"></script>
+ <!-- <script src="assets/js/app.min.js"></script> -->
   <!-- JS Libraies -->
   <script src="assets/bundles/cleave-js/dist/cleave.min.js"></script>
   <script src="assets/bundles/cleave-js/dist/addons/cleave-phone.us.js"></script>
