@@ -172,7 +172,7 @@ require_once("includes/db.php");
                                   <td><?= $row['names']?></td>
                                   <td><?= $row['email']?></td>
                                   <td><?= $row['phoneNumber']?></td>
-                                  <td><a href="pages/deleteCarRentBooking?deleteBooking=<?= $row['id']?>" class="btn btn-danger">Delete</a></td>                                  
+                                  <td><a href="pages/deleteAirportSerBooking?deleteBooking=<?= $row['id']?>" class="btn btn-danger">Delete</a></td>                                  
                                 </tr>
                               <?php
                             $a++;}

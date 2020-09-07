@@ -155,6 +155,10 @@
 							$h = mysqli_real_escape_string($conn,$_POST['streetNumber']);
 							$i = "#".$d.$g.$b;
 
+							echo "<script>alert('".$cod."')</script>";
+
+							die();
+							
 							$ch = mysqli_query($conn,"SELECT *FROM carrentbookings WHERE bookingCode='$i'") or die(mysqli_error($conn));
 							if (mysqli_num_rows($ch)>0) {
 								echo "<script>alert('This booking already booked')</script>";

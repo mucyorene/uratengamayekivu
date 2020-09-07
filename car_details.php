@@ -137,14 +137,6 @@
                                                 <div class="single-slide red zoom">
                                                     <img src="admin/media/imagesRent/<?= $row['photo3']?>" alt="Land Cruiser">
                                                 </div>
-                                                
-                                                <div class="single-slide red zoom">
-                                                    <img src="admin/media/imagesRent/<?= $row['photo4']?>" alt="Land Cruiser">
-                                                </div>
-
-                                                <div class="single-slide red zoom">
-                                                    <img src="admin/media/imagesRent/<?= $row['photo5']?>" alt="Land Cruiser">
-                                                </div>
 
                                                 <!-- <div class="single-slide red zoom">
                                                     <img src="admin/media/imagesRent" alt="Land Cruiser">
@@ -174,12 +166,6 @@
 
                                                     <div class="single-slide red zoom">
                                                     <img src="admin/media/imagesRent/<?= $row['photo3']?>" alt="Land Cruiser">
-                                                </div>
-                                                <div class="single-slide red zoom">
-                                                    <img src="admin/media/imagesRent/<?= $row['photo4']?>" alt="Land Cruiser">
-                                                </div>
-                                                    <div class="single-slide red zoom">
-                                                    <img src="admin/media/imagesRent/<?= $row['photo5']?>" alt="Land Cruiser">
                                                 </div>
                                             </div>
                                         </div>
@@ -260,7 +246,7 @@
         <!-- Uren's Single Product Area End Here -->
 
         <!-- Begin Uren's Single Product Tab Area -->
-        <div class="sp-product-tab_area">
+        <!-- <div class="sp-product-tab_area">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
@@ -281,9 +267,6 @@
                                                 <strong>Ullam aliquam</strong>
                                                 <span>Voluptatum, minus? Optio molestias voluptates aspernatur laborum ratione minima, natus eaque nemo rem quisquam, suscipit architecto saepe. Debitis omnis labore laborum consectetur, quas, esse voluptates minus aliquam modi nesciunt earum! Vero rerum molestiae corporis libero repellat doloremque quae sapiente ratione maiores qui aliquam, sunt obcaecati! Iure nisi doloremque numquam delectus.</span>
                                             </li>
-                                         
-                                            
-
                                         </ul>
                                     </div>
                                 </div>
@@ -361,7 +344,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <!-- Uren's Single Product Tab Area End Here -->
 
         <!-- Begin Uren's Product Area -->

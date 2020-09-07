@@ -88,8 +88,8 @@
 							<div class="default-select" id="default-select">
 								<select name="drivingType">
 									<option value="" disabled selected hidden>Self drive?</option>
-									<option value="yes">YES</option>
-									<option value="no">NO</option>
+									<option value="yes">Self Driver</option>
+									<option value="no">With Driver</option>
 								</select>
 							</div>
 						</div>
@@ -122,7 +122,7 @@
 						</div>
 						<div class="form-group row">
 							<div class="col-md-12">
-								<button type="submit" name="saveAirportBookings" class="btn btn-default btn-lg btn-block text-center text-uppercase">Confirm Car Booking</button>
+								<button type="submit" name="saveAirportBookings" class="btn btn-default btn-lg btn-block text-center text-uppercase">Confirm</button>
 							</div>
 						</div>
 					</form>
@@ -161,6 +161,7 @@
 					<div class="row d-flex justify-content-center">
 						<div class="menu-content pb- col-lg-12">
 							<div class="title text-center">
+						
 								<h1 class="mb-10">Available cars for rent </h1>
 							</div>
 						</div>
@@ -170,8 +171,10 @@
 						<div class="card-body">
 							<div class="row">
 								<?php
-									$query = mysqli_query($conn,"SELECT *FROM car_rent ORDER BY carId DESC limit 3") or die(mysqli_error($conn));
+									$query = mysqli_query($conn,"SELECT *FROM car_rent GROUP BY carType") or die(mysqli_error($conn));								
 									if (mysqli_num_rows($query)>0) {
+										// var_dump($query);
+										// die();
 										$a = 1;
 										while ($row = mysqli_fetch_array($query)) {
 										?>
@@ -315,11 +318,40 @@
 						</div>
 					</div>				
 					<div class="row">
-					
+							<div class="col-md-6">
+								<div class="feature-image">
+									<img src="assets/images/adsNto.jpg" alt="TXL" height="300">
+									<div class="feature-overlay">
+										<div class="display-table">
+											<div class="display-tablecell">
+												<a  href="car_details"><i class="icofont-car"></i></a>
+												<a href="car_details"><i title="Book this car" class="icofont icofont-link"></i></a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- Details regarding to car for sales; -->
+							<div class="col-md-6">
+								<div class="sp-essential_stuff">
+									<ul>
+										<li>Car Name: <a href="javascript:void(0)"></a></li>
+										<li>Transimission: <a href="javascript:void(0)"></a></li>
+										<li>Seats: <a href="javascript:void(0)"></a></li>
+										<li>KM / Litre: <a href="javascript:void(0)"></a></li>
+										<li>Doors: <a href="javascript:void(0)"></a></li>  
+										<li>Fuels/Diesel: <a href="javascript:void(0)"></a></li>                                                  
+										<li>Air Condition: <a href="javascript:void(0)"></a></li>
+										<li>Price : <a href="javascript:void(0)"></a></li>
+									</ul>
+								</div>
+							</div>
+							
+
 							<!-- <div class="col-lg-4 col-md-6">
 								<div class="single-feature1">
 									<div class="feature-image">
-									   	<img src="uploads/RAV4_2004_black/5.jpg" alt="TXL">
+									   	<img src="assets/images/adsNto.jpg" alt="TXL">
 										<div class="feature-overlay">
 											<div class="display-table">
 												<div class="display-tablecell">
@@ -346,13 +378,13 @@
 										   This car has got a very high speed rate and oill consuming is not huge
 										  </div>
 										</div>	
-									</div>
+								</div>
 							</div> -->
-							<!-- </div> -->
-							<!-- <div class="col-lg-4 col-md-6">
+							<!-- </div>
+							<div class="col-lg-4 col-md-6">
 								<div class="single-feature1">
 									<div class="feature-image">
-									   <img src="uploads/RAV4_2006_KAKI/1.jpg" alt="RAV4_2004_SILVER">
+									   <img src="assets/images/adsNto.jpg" alt="RAV4_2004_SILVER">
 										<div class="feature-overlay">
 											<div class="display-table">
 												<div class="display-tablecell">
@@ -390,7 +422,149 @@
 							<div class="col-lg-4 col-md-6">
 								<div class="single-feature1">
 									<div class="feature-image">
-									   <img src="uploads/corolla_altis/1.jpg" alt="corolla_altis">
+									   <img src="assets/images/adsNto.jpg" alt="corolla_altis">
+										<div class="feature-overlay">
+											<div class="display-table">
+												<div class="display-tablecell">
+												   <a  href="car_details"><i class="icofont-car"></i></a>
+												   <a href="car_details"><i title="Book this car" class="icofont icofont-link"></i></a>
+												</div>
+
+											</div>
+										</div>
+									</div>
+									<div class="feature-middle">
+									   <span><i class="icofont-car"></i>30,000</span>
+									   <span><i class="icofont icofont-glue-oil"></i>20kmpl</span>
+									   <span><i class="icofont icofont-company"></i>Automatic</span>
+									   <span><i class="icofont icofont-paper-plane"></i>Model: 2018</span>
+									   <span><i class="icofont icofont-energy-water"></i>27hp</span>
+									   <span><i class="icofont icofont-dollar"></i>From 27.368</span>
+									   
+									</div>
+									<div class="feature-bottom">
+										<h5>COROLLA ALTIS<a style="text-decoration: none;color: grey;" data-toggle="collapse" href="#collapse7" role="button" aria-expanded="false" aria-controls="collapseExample">
+										    <i class="icofont-plus-circle"></i>
+										  </a></h5>
+										
+										  
+										
+										<div class="collapse" id="collapse7">
+										  <div class="card card-body">
+										   This car has got a very high speed rate and oill consuming is not huge
+										  </div>
+										</div>	
+									</div>
+								</div>
+							</div> -->
+					</div> 
+					&nbsp;
+					<div class="row">
+							<div class="col-md-6">
+								<div class="feature-image">
+									<img src="assets/images/adsNto.jpg" alt="TXL" height="300">
+									<div class="feature-overlay">
+										<div class="display-table">
+											<div class="display-tablecell">
+												<a  href="car_details"><i class="icofont-car"></i></a>
+												<a href="car_details"><i title="Book this car" class="icofont icofont-link"></i></a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- Details regarding to car for sales; -->
+							<div class="col-md-6">
+								<div class="sp-essential_stuff">
+									<ul>
+										<li>Car Name: <a href="javascript:void(0)"></a></li>
+										<li>Transimission: <a href="javascript:void(0)"></a></li>
+										<li>Seats: <a href="javascript:void(0)"></a></li>
+										<li>KM / Litre: <a href="javascript:void(0)"></a></li>
+										<li>Doors: <a href="javascript:void(0)"></a></li>  
+										<li>Fuels/Diesel: <a href="javascript:void(0)"></a></li>                                                  
+										<li>Air Condition: <a href="javascript:void(0)"></a></li>
+										<li>Price : <a href="javascript:void(0)"></a></li>
+									</ul>
+								</div>
+							</div>
+							
+
+							<!-- <div class="col-lg-4 col-md-6">
+								<div class="single-feature1">
+									<div class="feature-image">
+									   	<img src="assets/images/adsNto.jpg" alt="TXL">
+										<div class="feature-overlay">
+											<div class="display-table">
+												<div class="display-tablecell">
+												   <a  href="car_details"><i class="icofont-car"></i></a>
+												   <a href="car_details"><i title="Book this car" class="icofont icofont-link"></i></a>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="feature-middle">
+									   <span><i class="icofont-car"></i>30,000</span>
+									   <span><i class="icofont icofont-glue-oil"></i>20kmpl</span>
+									   <span><i class="icofont icofont-company"></i>Automatic</span>
+									   <span><i class="icofont icofont-paper-plane"></i>Model: 2018</span>
+									   <span><i class="icofont icofont-energy-water"></i>27hp</span>
+									   <span><i class="icofont icofont-dollar"></i>From 27.368</span>  
+									</div>
+									<div class="feature-bottom">
+										<h5>RAV4 2004 BLACK<a style="text-decoration: none;color: grey;" data-toggle="collapse" href="#collapse3" role="button" aria-expanded="false" aria-controls="collapseExample">
+										    <i class="icofont-plus-circle"></i>
+										  </a></h5>
+										<div class="collapse" id="collapse3">
+										  <div class="card card-body">
+										   This car has got a very high speed rate and oill consuming is not huge
+										  </div>
+										</div>	
+								</div>
+							</div> -->
+							<!-- </div>
+							<div class="col-lg-4 col-md-6">
+								<div class="single-feature1">
+									<div class="feature-image">
+									   <img src="assets/images/adsNto.jpg" alt="RAV4_2004_SILVER">
+										<div class="feature-overlay">
+											<div class="display-table">
+												<div class="display-tablecell">
+												   <a  href="car_details"><i class="icofont-car"></i></a>
+												   <a href="car_details"><i title="Book this car" class="icofont icofont-link"></i></a>
+												</div>
+
+											</div>
+										</div>
+									</div>
+									<div class="feature-middle">
+									   <span><i class="icofont-car"></i>30,000</span>
+									   <span><i class="icofont icofont-glue-oil"></i>20kmpl</span>
+									   <span><i class="icofont icofont-company"></i>Automatic</span>
+									   <span><i class="icofont icofont-paper-plane"></i>Model: 2018</span>
+									   <span><i class="icofont icofont-energy-water"></i>27hp</span>
+									   <span><i class="icofont icofont-dollar"></i>From 27.368</span>
+									   
+									</div>
+									<div class="feature-bottom">
+										<h5>RAV4 2006 KAKI<a style="text-decoration: none;color: grey;" data-toggle="collapse" href="#collapse6" role="button" aria-expanded="false" aria-controls="collapseExample">
+										    <i class="icofont-plus-circle"></i>
+										  </a></h5>
+										
+										  
+										
+										<div class="collapse" id="collapse6">
+										  <div class="card card-body">
+										   This car has got a very high speed rate and oill consuming is not huge
+										  </div>
+										</div>	
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-4 col-md-6">
+								<div class="single-feature1">
+									<div class="feature-image">
+									   <img src="assets/images/adsNto.jpg" alt="corolla_altis">
 										<div class="feature-overlay">
 											<div class="display-table">
 												<div class="display-tablecell">
@@ -505,23 +679,23 @@
 					</div>
 				</div>	
 			</section>
-
-
-		
-					
-
-			
-
-			
-
-
 			<!-- Start fact Area -->
 			<section class="facts-area section-gap" id="facts-area">
 				<div class="container">
 					<div class="row">
 						<div class="col single-fact">
-							<h1 class="counter">13</h1>
-							<p>Cars available</p>
+							<h1 class="counter">
+								<?php
+									$query = mysqli_query($conn,"SELECT *FROM car_rent ORDER BY carId DESC") or die(mysqli_error($conn));
+									if (mysqli_num_rows($query)) {
+										$cars = mysqli_num_rows($query);
+										echo $cars;
+									}else{
+										echo "No car available";
+									}
+								?>
+							</h1>
+							<p>Cars available for rent</p>
 						</div>
 						<div class="col single-fact">
 							<h1 class="counter">4</h1>
