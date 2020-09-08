@@ -146,13 +146,14 @@ require_once("includes/db.php");
                             <th>Car photo</th>
                             <th>Booking Number</th>
                             <th>Pickup</th>
-                            <th>Date of Pickup</th>
-                            <th>Drop off</th>
-                            <th>Date of drop off</th>
+                            <th>Date of picking</th>
                             <th>Names</th>
                             <th>Email</th>
                             <th>Phone Number</th>
+                            <th>Home Number</th>
                             <th>Street Number</th>
+                            <th>Confirm</th>
+                            <th>Canceling</th>
                             <th>Delete</th>
                           </tr>
                         </thead>
@@ -170,13 +171,15 @@ require_once("includes/db.php");
                                   <td><?= $row['bookingCode']?></td>
                                   <td><?= $row['numberOfCars']?></td>
                                   <td><?= $row['datePickedUp']?></td>
-                                  <td><?= $row['numberOfDropOffs']?></td>
-                                  <td><?= $row['dateReturned']?></td>
                                   <td><?= $row['names']?></td>
                                   <td><?= $row['email']?></td>
                                   <td><?= $row['phoneNumber']?></td>
+                                  <td><?= $row['hNumber']?></td>
                                   <td><?= $row['streetNumber']?></td>
-                                  <td><a href="pages/deleteCarRentBooking?deleteBooking=<?= $row['id']?>" class="btn btn-danger">Delete</a></td>                                  
+                                  <td><a href="pages/#?deleteBooking=<?= $row['id']?>" class="btn btn-success">Confirm</a></td>
+                                  <td><a href="pages/#?deleteBooking=<?= $row['id']?>" class="btn btn-warning">Cancel</a></td>
+                                  <td><a href="pages/deleteCarRentBooking?deleteBooking=<?= $row['id']?>" class="btn btn-danger">Delete</a></td>
+                                  
                                 </tr>
                               <?php
                             $a++;}

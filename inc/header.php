@@ -2,13 +2,13 @@
 	<div class="fixed-top" style="background-color:black;height:25px;overflow:hidden;">
 		<div class="container">
 			<div class="row">
-			<div class="col-md-4">
+			<div class="col-md-4 col-sm-12 col-lg-4">
 				<h5>
 					<b  style="color:white;">Tel:</b> 
 					<span style="color:#97c03a;">0788239593</span>
 				</h5>
 			</div>			
-			<div class="col-md-4">
+			<div class="col-md-4 col-sm-12 col-lg-4">
 				<div class="uren-social_link">
 					<ul>
 						<li class="facebook">
@@ -39,7 +39,7 @@
 					</ul>
 				</div>
 			</div>
-			<div class="col-md-4">
+			<div class="col-md-4 col-sm-12 col-lg-4">
 				<h5>
 					<b  style="color:white;">Email:</b> 
 					<span style="color:#97c03a;">kivurarwanda@gmail.com</span>

@@ -301,14 +301,18 @@ require_once("includes/db.php");
           $tl = mysqli_real_escape_string($conn,$_FILES['photo2']["name"]);          
           $tm = mysqli_real_escape_string($conn,$_FILES['photo3']["name"]);
 
-          $ext = explode(".",$th);
+          $ext = explode(".",$tj);
           $ext1 = explode(".",$tk);
           $ext2 = explode(".",$tl);
           $ext3 = explode(".",$tm);
           
           $j = uniqid().".".$ext[1];
-          //echo "<script>alert('".$j."')</script>";
-          die();
+          $k = uniqid().".".$ext1[1];
+          $l = uniqid().".".$ext2[1];
+          $m = uniqid().".".$ext3[1];
+
+          // echo "<script>alert('".$j."')</script>";
+          // die();
         $exist = mysqli_query($conn,"SELECT * FROM car_rent WHERE carName = '$a'") or die(mysqli_error($conn));
         if (mysqli_num_rows($exist)>0) {
           echo "<script>alert('This car already registered')</script>";

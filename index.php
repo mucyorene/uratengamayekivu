@@ -1,6 +1,7 @@
 <?php
 	require_once("admin/includes/db.php");
 ?>
+
 <!DOCTYPE html>
 <html lang="zxx" class="no-js">
 <head>
@@ -171,7 +172,7 @@
 						<div class="card-body">
 							<div class="row">
 								<?php
-									$query = mysqli_query($conn,"SELECT *FROM car_rent GROUP BY carType") or die(mysqli_error($conn));								
+									$query = mysqli_query($conn,"SELECT *FROM car_rent GROUP BY carType ORDER BY carId DESC") or die(mysqli_error($conn));								
 									if (mysqli_num_rows($query)>0) {
 										// var_dump($query);
 										// die();
@@ -182,7 +183,7 @@
 												<div class="single-feature1">
 													<div class="feature-image">
 													<img src="admin/media/imagesRent/<?php echo $row['thumbnail'];?>" alt="corolla_altis">
-														<div class="feature-overlay">
+														<!-- <div class="feature-overlay">
 															<div class="display-table">
 																<div class="display-tablecell">
 																
@@ -190,7 +191,7 @@
 																</div>
 
 															</div>
-														</div>
+														</div> -->
 													</div>
 													<div class="feature-middle">
 														<span><i class="icofont icofont-company"></i><?= $row['carTransimission']?></span>
@@ -203,7 +204,7 @@
 														<h5><?= $row['carName']?><a style="text-decoration: none;color: grey;" data-toggle="collapse" href="#collapse<?= $row['carId']?>" role="button" aria-expanded="false" aria-controls="collapseExample">
 															<i class="icofont-plus-circle"></i>
 														</a></h5>
-														<a class="btn btn-block btn-info" href="book_car?idSent=<?php echo $row['carId']?>">Book now</a>
+														<a class="btn btn-block btn-info" href="car_details?ids=<?php echo $row['carId']?>">Details</a>
 														<div class="collapse" id="collapse<?= $row['carId']?>">
 														<div class="card card-body">
 															<?php echo $row['carDesc'];?>
@@ -810,6 +811,7 @@
 			<script src="js/jquery.counterup.min.js"></script>					
 			<script src="js/parallax.min.js"></script>		
 			<script src="js/mail-script.js"></script>	
+			<script src="assets/js/plugins/scroll-top.js"></script>
 			<script src="js/main.js"></script>	
 		</body>
 	</html>

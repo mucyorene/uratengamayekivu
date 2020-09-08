@@ -113,8 +113,9 @@
                             $query = mysqli_query($conn,"SELECT *FROM car_rent WHERE carId='$id'") or die(mysqli_error($conn));
                             if (mysqli_num_rows($query)>0) {
                                 $row = mysqli_fetch_array($query);
+                                    $carType = $row['carType'];
                                 ?>
-                                    <div class="col-lg-4">
+                                    <div class="col-md-4 col-lg-4">
                                         <div class="sp-img_area">
                                             <div class="sp-img_slider slick-img-slider uren-slick-slider" data-slick-options='{
                                             "slidesToShow": 1,
@@ -170,18 +171,18 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-lg-8">
+                                    <div class="col-md-8 col-lg-4">
                                         <div class="sp-content">
                                             <h2><?= $row['carName']?></h2>
-                                            <div class="rating-box">
-                                                <!-- <ul>
+                                            <!-- <div class="rating-box">
+                                                <ul>
                                                     <li><i class="ion-android-star"></i></li>
                                                     <li><i class="ion-android-star"></i></li>
                                                     <li><i class="ion-android-star"></i></li>
                                                     <li class="ion-android-star"></i></li>
                                                     <li class="silver-color"></li>
-                                                </ul> -->
-                                            </div>
+                                                </ul>
+                                            </div> -->
                                             <div class="sp-essential_stuff">
                                                 <ul>
                                                     <li>Car Name: <a href="javascript:void(0)"><?= $row['carName']?></a></li>
@@ -234,6 +235,10 @@
                                             </div>
                                         </div>
                                     </div>
+
+                                    <!-- <div class="col-md-4 col-lg-4">
+                                        Booking
+                                    </div> -->
                                 <?php
                             }else{
                                 echo "<h2>No car to rend available</h2>";
@@ -367,7 +372,7 @@
                                                 {"breakpoint":480, "settings": {"slidesToShow": 1}}
                                             ]'>
                             <?php
-                                $relatedQuery = mysqli_query($conn,"SELECT *FROM car_rent ORDER BY carId DESC") or die(mysqli_error($conn));
+                                $relatedQuery = mysqli_query($conn,"SELECT *FROM car_rent WHERE carType='$carType' ORDER BY carId DESC") or die(mysqli_error($conn));
                                 if (mysqli_num_rows($relatedQuery)>0) {
                                     # code...
                                     $var = 1;

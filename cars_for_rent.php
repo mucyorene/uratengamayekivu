@@ -53,7 +53,7 @@
 		<!-- Social medias -->
 		<link rel="stylesheet" href="assets/css/social.css">
 	</head>
-<body>
+<body style="overflow-x:hidden;">
 	<div id="myModal" class="modal fade" role="dialog">
 		  <div class="modal-dialog">
 		    <!-- Modal content-->
@@ -141,7 +141,7 @@
 											<div class="single-feature1">
 												<div class="feature-image">
 													<img src="admin/media/imagesRent/<?= $rowPre['thumbnail']?>" alt="Land Cruiser">
-													<div class="feature-overlay">
+													<!-- <div class="feature-overlay">
 														<div class="display-table">
 															<div class="display-tablecell">
 																<a  href="car_details"><i class="icofont-car"></i></a>
@@ -149,7 +149,7 @@
 															</div>
 
 														</div>
-													</div>
+													</div> -->
 												</div>
 												<div class="feature-middle">
 														<span><i class="icofont icofont-company"></i><?= $rowPre['carTransimission']?></span>
@@ -163,6 +163,7 @@
 													<h5><?= $rowPre['carName']?><a style="text-decoration: none;color: grey;" data-toggle="collapse" href="#collapse<?= $rowPre['carId']?>" role="button" aria-expanded="false" aria-controls="collapseExample">
 														<i class="icofont-plus-circle"></i>
 														</a></h5>
+													<a class="btn btn-block btn-info" href="car_details?ids=<?php echo $rowPre['carId']?>">Details</a>
 													<div class="collapse" id="collapse<?= $rowPre['carId']?>">
 														<div class="card card-body">
 															<?= $rowPre['carDesc']?></i>
@@ -192,7 +193,7 @@
 												<div class="single-feature1">
 													<div class="feature-image">
 														<img src="admin/media/imagesRent/<?= $rowPre['thumbnail']?>" alt="Land Cruiser">
-														<div class="feature-overlay">
+														<!-- <div class="feature-overlay">
 															<div class="display-table">
 																<div class="display-tablecell">
 																	<a  href="car_details"><i class="icofont-car"></i></a>
@@ -200,7 +201,7 @@
 																</div>
 
 															</div>
-														</div>
+														</div> -->
 													</div>
 													<div class="feature-middle">
 														<span><i class="icofont icofont-company"></i><?= $rowPre['carTransimission']?></span>
@@ -214,6 +215,7 @@
 														<h5><?= $rowPre['carName']?><a style="text-decoration: none;color: grey;" data-toggle="collapse" href="#collapse<?= $rowPre['carId']?>" role="button" aria-expanded="false" aria-controls="collapseExample">
 															<i class="icofont-plus-circle"></i>
 															</a></h5>
+														<a class="btn btn-block btn-info" href="car_details?ids=<?php echo $rowPre['carId']?>">Details</a>
 														<div class="collapse" id="collapse<?= $rowPre['carId']?>">
 															<div class="card card-body">
 																<?= $rowPre['carDesc']?></i>
@@ -243,7 +245,7 @@
 											<div class="single-feature1">
 												<div class="feature-image">
 													<img src="admin/media/imagesRent/<?= $rowPre['thumbnail']?>" alt="Land Cruiser">
-													<div class="feature-overlay">
+													<!-- <div class="feature-overlay">
 														<div class="display-table">
 															<div class="display-tablecell">
 																<a  href="car_details"><i class="icofont-car"></i></a>
@@ -251,7 +253,7 @@
 															</div>
 
 														</div>
-													</div>
+													</div> -->
 												</div>
 												<div class="feature-middle">
 														<span><i class="icofont icofont-company"></i><?= $rowPre['carTransimission']?></span>
@@ -265,6 +267,7 @@
 													<h5><?= $rowPre['carName']?><a style="text-decoration: none;color: grey;" data-toggle="collapse" href="#collapse<?= $rowPre['carId']?>" role="button" aria-expanded="false" aria-controls="collapseExample">
 														<i class="icofont-plus-circle"></i>
 														</a></h5>
+													<a class="btn btn-block btn-info" href="car_details?ids=<?php echo $rowPre['carId']?>">Details</a>
 													<div class="collapse" id="collapse<?= $rowPre['carId']?>">
 														<div class="card card-body">
 															<?= $rowPre['carDesc']?></i>
@@ -294,7 +297,7 @@
 												<div class="single-feature1">
 													<div class="feature-image">
 														<img src="admin/media/imagesRent/<?= $rowPre['thumbnail']?>" alt="Land Cruiser">
-														<div class="feature-overlay">
+														<!-- <div class="feature-overlay">
 															<div class="display-table">
 																<div class="display-tablecell">
 																	<a  href="car_details"><i class="icofont-car"></i></a>
@@ -302,7 +305,7 @@
 																</div>
 
 															</div>
-														</div>
+														</div> -->
 													</div>
 													<div class="feature-middle">
 														<span><i class="icofont icofont-company"></i><?= $rowPre['carTransimission']?></span>
@@ -316,6 +319,7 @@
 														<h5><?= $rowPre['carName']?><a style="text-decoration: none;color: grey;" data-toggle="collapse" href="#collapse<?= $rowPre['carId']?>" role="button" aria-expanded="false" aria-controls="collapseExample">
 															<i class="icofont-plus-circle"></i>
 															</a></h5>
+														<a class="btn btn-block btn-info" href="car_details?ids=<?php echo $rowPre['carId']?>">Details</a>
 														<div class="collapse" id="collapse<?= $rowPre['carId']?>">
 															<div class="card card-body">
 																<?= $rowPre['carDesc']?></i>
@@ -345,15 +349,14 @@
 												<div class="single-feature1">
 													<div class="feature-image">
 														<img src="admin/media/imagesRent/<?= $rowPre['thumbnail']?>" alt="Land Cruiser">
-														<div class="feature-overlay">
+														<!-- <div class="feature-overlay">
 															<div class="display-table">
 																<div class="display-tablecell">
 																	<a  href="car_details"><i class="icofont-car"></i></a>
 																	<a href="car_details?ids=<?= $rowPre['carId'];?>"><i title="Book this car" class="icofont icofont-link"></i></a>
 																</div>
-
 															</div>
-														</div>
+														</div> -->
 													</div>
 													<div class="feature-middle">
 														<span><i class="icofont icofont-company"></i><?= $rowPre['carTransimission']?></span>
@@ -367,6 +370,7 @@
 														<h5><?= $rowPre['carName']?><a style="text-decoration: none;color: grey;" data-toggle="collapse" href="#collapse<?= $rowPre['carId']?>" role="button" aria-expanded="false" aria-controls="collapseExample">
 															<i class="icofont-plus-circle"></i>
 															</a></h5>
+														<a class="btn btn-block btn-info" href="car_details?ids=<?php echo $rowPre['carId']?>">Details</a>
 														<div class="collapse" id="collapse<?= $rowPre['carId']?>">
 															<div class="card card-body">
 																<?= $rowPre['carDesc']?></i>
