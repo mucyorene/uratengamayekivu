@@ -166,7 +166,7 @@ require_once("includes/db.php");
                               ?>
                                 <tr>
                                   <td><?= $a;?></td>
-                                  <td><img src="media/imagesRent/<?= $row['thumbnail']?>" height="20" width="40" alt=""></td>
+                                  <td><a target="__block" href="media/imagesRent/<?= $row['thumbnail']?>"><img src="media/imagesRent/<?= $row['thumbnail']?>" height="20" width="40" alt=""></a></td>
                                   <td><?= $row['bookingCode']?></td>
                                   <td><?= $row['datePickedUp']?></td>
                                   <td><?= $row['names']?></td>

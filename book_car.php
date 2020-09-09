@@ -354,7 +354,7 @@
                                                     ,names,email,phoneNumber,hNumber,streetNumber,bookingCode,carId,status1) VALUES ('','$b','$c','$d','$e','$f','$g','$i','$id','unread')") or die(mysqli_error($conn));
                                                     if ($saving) {
                                                         echo "<script>alert('Thank you for booking your booking code is".$i."');
-                                                        window.top.location='car_for_rent.php';
+                                                        window.top.location='cars_for_rent.php';
                                                         </script>";
                                                         # code...
                                                     }else {

@@ -19,8 +19,6 @@
 		<meta property="og:url" content="https://uratengamayekivu.com/" />
 		<meta property="og:site_name" content="Uratengamaye Kivu" />
  
- 
-
 		<!-- Site Title -->
 		<title>Uratengamaye Kivu | About</title>
 
