@@ -41,7 +41,7 @@
                     <div id="mail-nav">
                       <ul class="" id="mail-folders">
                         <li>
-                          <a href="mail-inbox.html" title="Inbox">Contact Messages (10)
+                          <a href="" title="Inbox">Contact Messages (10)
                           </a>
                         </li>
                         <!-- <li>
