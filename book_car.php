@@ -102,7 +102,6 @@
             </div>
         </div>
     </section>
-
     <div class="main-wrapper">
         <!-- Begin Uren's Single Product Area -->
         <div class="sp-area">
@@ -237,54 +236,105 @@
                                     </div>
 
                                     <div class="col-md-4 col-lg-4">
-										<div class="header-right m-0">
-											<h4 class="text-white pb-30">Car booking !</h4>
-											<form class="form" role="form" autocomplete="off" method="POST">
-												<div class="form-group">
-													You selected	
-												</div>
-												<div class="form-group row">
-													<div class="col-md-6 wrap-left">
-                                                       
-														<div class="default-select" id="default-select">
-															<select name="noRentCars">
-																<option value="" disabled selected hidden>Pickup</option>
-																<option value="Pickup One">Pickup One</option>
-																<option value="Pickup Two">Pickup Two</option>
-																<option value="Pickup Three">Pickup Three</option>
-																<option value="Pickup Four">Pickup Four</option>
-															</select>
-														</div>
-													</div>
-													<div class="col-md-6 wrap-right">
-														<div class="input-group dates-wrap">                                          
-															<input id="datepicker" name="dateToPick" class="dates form-control" id="exampleAmount" placeholder="Date & time" type="text">                        
-															<div class="input-group-prepend">
-																<span  class="input-group-text"><span class="lnr lnr-calendar-full"></span></span>
-															</div>											
-														</div>
-													</div>
-												</div>						    
-												<div class="from-group">
-													<input class="form-control txt-field" type="text" name="name" placeholder="Your name">
-													<input class="form-control txt-field" type="email" name="email" placeholder="Email address">
-													<input class="form-control txt-field" type="tel" name="phone" placeholder="Phone number">
-                                                    <input class="form-control txt-field" type="text" name="homeNumber" placeholder="Home address">
-                                                    <input class="form-control txt-field" type="text" name="streetNumber" placeholder="Street number">
-												</div>
-												<div class="form-group row">
-													<div class="col-md-12">
-														<button type="type" name="saveCarRentBooking" class="btn btn-primary btn-block text-center text-uppercase">Confirm Car Booking</button>
-													</div>
-												</div>
-											</form>
-										</div>
+                                    
+                                        <!-- <form class="form" role="form" autocomplete="off" method="POST">
+                                            <div class="form-group">
+                                                <div class="col-md-6 wrap-left">
+                                                    <div class="default-select" id="default-select">
+                                                        <select name="noRentCars">
+                                                            <option value="" disabled selected hidden>Pickup</option>
+                                                            <option value="Pickup One">Pickup One</option>
+                                                            <option value="Pickup Two">Pickup Two</option>
+                                                            <option value="Pickup Three">Pickup Three</option>
+                                                            <option value="Pickup Four">Pickup Four</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12 wrap-right">
+                                                    <div class="input-group dates-wrap">                                          
+                                                        <input id="datepicker" name="dateToPick" class="dates form-control" id="exampleAmount" placeholder="Date & time" type="text">                        
+                                                        <div class="input-group-prepend">
+                                                            <span  class="input-group-text"><span class="lnr lnr-calendar-full"></span></span>
+                                                        </div>											
+                                                    </div>
+                                                </div>
+                                            </div>						    
+                                            <div class="from-group">
+                                                <input class="form-control txt-field" type="text" name="name" placeholder="Your name">
+                                                
+                                                <input class="form-control txt-field" type="email" name="email" placeholder="Email address">
+                                                <input class="form-control txt-field" type="tel" name="phone" placeholder="Phone number">
+                                                <input class="form-control txt-field" type="text" name="homeNumber" placeholder="Home address">
+                                                <input class="form-control txt-field" type="text" name="streetNumber" placeholder="Street number">
+                                            </div>
+                                            <div class="form-group row">
+                                                <div class="col-md-12">
+                                                    <button type="type" name="saveCarRentBooking" class="btn btn-primary btn-block text-center text-uppercase">Confirm Car Booking</button>
+                                                </div>
+                                            </div>
+                                        </form> -->
+                                        <form method="POST" class="form">
+                                            <div class="card-body">
+                                                <div class="form-group">
+                                                    <div class="input-group dates-wrap">                                          
+                                                        <input id="datepicker" name="dateToPick" class="dates form-control" id="exampleAmount" placeholder="Date & time" type="text">                        
+                                                        <div class="input-group-prepend">
+                                                            <span  class="input-group-text"><span class="lnr lnr-calendar-full"></span></span>
+                                                        </div>											
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <div class="col-md-3">
+                                                        <label>Your Names</label> 
+                                                    </div>
+                                                    <div class="col-md-9">
+                                                        <input type="text" name="names" class="form-control" required=""> 
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <div class="col-md-3">
+                                                        <label>Email</label> 
+                                                    </div>
+                                                    <div class="col-md-9">
+                                                        <input type="email" name="email" class="form-control" required=""> 
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <div class="col-md-3">
+                                                        <label>Phone</label> 
+                                                    </div>
+                                                    <div class="col-md-9">
+                                                        <input type="text" name="phone" class="form-control" required=""> 
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <div class="col-md-3">
+                                                        <label>Home Address</label> 
+                                                    </div>
+                                                    <div class="col-md-9">
+                                                        <input type="text" name="homeNumber" class="form-control" required=""> 
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <div class="col-md-3">
+                                                        <label>Street Number</label> 
+                                                    </div>
+                                                    <div class="col-md-9">
+                                                        <input type="text" class="form-control" name="streetNumber" required=""> 
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="card-footer text-right">
+                                                        <button class="btn btn-success" type="text" name="saveCarRentBooking">Confirm Booking</button>
+                                                    </div>
+                                                </div>
+                                            </div>
 
+                                        </form>
                                         <?php
                                             if (isset($_POST['saveCarRentBooking'])) {
-                                                $a = mysqli_real_escape_string($conn,$_POST['noRentCars']);
                                                 $b = mysqli_real_escape_string($conn,$_POST['dateToPick']);
-                                                $c = mysqli_real_escape_string($conn,$_POST['name']);
+                                                $c = mysqli_real_escape_string($conn,$_POST['names']);
                                                 $d = mysqli_real_escape_string($conn,$_POST['email']);
                                                 $e = mysqli_real_escape_string($conn,$_POST['phone']);
                                                 $f = mysqli_real_escape_string($conn,$_POST['homeNumber']);
@@ -300,19 +350,20 @@
                                                     echo "<script>alert('This booking already booked')</script>";
                                                     # code...
                                                 }else{
-                                                    $saving = mysqli_query($conn,"INSERT INTO carrentbookings (id,numberOfCars,datePickedUp
-                                                    ,names,email,phoneNumber,hNumber,streetNumber,bookingCode,carId) VALUES ('','$a','$b','$c','$d','$e','$f','$g','$i','$id')") or die(mysqli_error($conn));
+                                                    $saving = mysqli_query($conn,"INSERT INTO carrentbookings (id,datePickedUp
+                                                    ,names,email,phoneNumber,hNumber,streetNumber,bookingCode,carId,status1) VALUES ('','$b','$c','$d','$e','$f','$g','$i','$id','unread')") or die(mysqli_error($conn));
                                                     if ($saving) {
                                                         echo "<script>alert('Thank you for booking your booking code is".$i."');
-                                                        window.top.location='book_car.php';
+                                                        window.top.location='car_for_rent.php';
                                                         </script>";
                                                         # code...
+                                                    }else {
+                                                        echo "<script>alert('Failed to book');</script>";
                                                     }
                                                 }
 
                                             }
                                         ?>
-
                                     </div>
                                 <?php
                             }else{

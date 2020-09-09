@@ -127,8 +127,8 @@
 									if (mysqli_num_rows($ch)) {
 										echo "<script>alert('Your message already sent');</script>";
 									}else{
-										$contact = mysqli_query($conn,"INSERT INTO contact (id,names,email,subject,message,sentAt)
-										VALUES ('','$a','$b','$c','$d','')") or die(mysqli_error($conn));
+										$contact = mysqli_query($conn,"INSERT INTO contact (id,names,email,subject,message,sentAt,status1)
+										VALUES ('','$a','$b','$c','$d','','unread')") or die(mysqli_error($conn));
 										
 										if ($contact) {
 											echo "<script>alert('Your message sent');</script>";

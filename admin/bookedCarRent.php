@@ -145,7 +145,6 @@ require_once("includes/db.php");
                             <th>N<sup>o</sup></th>
                             <th>Car photo</th>
                             <th>Booking Number</th>
-                            <th>Pickup</th>
                             <th>Date of picking</th>
                             <th>Names</th>
                             <th>Email</th>
@@ -169,7 +168,6 @@ require_once("includes/db.php");
                                   <td><?= $a;?></td>
                                   <td><img src="media/imagesRent/<?= $row['thumbnail']?>" height="20" width="40" alt=""></td>
                                   <td><?= $row['bookingCode']?></td>
-                                  <td><?= $row['numberOfCars']?></td>
                                   <td><?= $row['datePickedUp']?></td>
                                   <td><?= $row['names']?></td>
                                   <td><?= $row['email']?></td>

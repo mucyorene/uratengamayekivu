@@ -37,95 +37,6 @@ require_once("includes/db.php");
         <section class="section">
           <div class="section-body">
             <div class="row">
-              <!-- <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                <div class="card">
-                  <div class="card-statistic-4">
-                    <div class="align-items-center justify-content-between">
-                      <div class="row ">
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr-0 pt-3">
-                          <div class="card-content">
-                            <h5 class="font-15">New Booking</h5>
-                            <h2 class="mb-3 font-18">258</h2>
-                            <p class="mb-0"><span class="col-green">10%</span> Increase</p>
-                          </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl-0">
-                          <div class="banner-img">
-                            <img src="assets/img/banner/1.png" alt="">
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                <div class="card">
-                  <div class="card-statistic-4">
-                    <div class="align-items-center justify-content-between">
-                      <div class="row ">
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr-0 pt-3">
-                          <div class="card-content">
-                            <h5 class="font-15"> Customers</h5>
-                            <h2 class="mb-3 font-18">1,287</h2>
-                            <p class="mb-0"><span class="col-orange">09%</span> Decrease</p>
-                          </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl-0">
-                          <div class="banner-img">
-                            <img src="assets/img/banner/2.png" alt="">
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                <div class="card">
-                  <div class="card-statistic-4">
-                    <div class="align-items-center justify-content-between">
-                      <div class="row ">
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr-0 pt-3">
-                          <div class="card-content">
-                            <h5 class="font-15">New Project</h5>
-                            <h2 class="mb-3 font-18">128</h2>
-                            <p class="mb-0"><span class="col-green">18%</span>
-                              Increase</p>
-                          </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl-0">
-                          <div class="banner-img">
-                            <img src="assets/img/banner/3.png" alt="">
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12">
-              <div class="card">
-                <div class="card-statistic-4">
-                  <div class="align-items-center justify-content-between">
-                    <div class="row ">
-                      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr-0 pt-3">
-                        <div class="card-content">
-                          <h5 class="font-15">Revenue</h5>
-                          <h2 class="mb-3 font-18">$48,697</h2>
-                          <p class="mb-0"><span class="col-green">42%</span> Increase</p>
-                        </div>
-                      </div>
-                      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl-0">
-                        <div class="banner-img">
-                          <img src="assets/img/banner/4.png" alt="">
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div> -->
               <div class="col-sm-12 col-md-12 col-lg-12">
                 <div class="card">
                   <div class="card-header">
@@ -136,6 +47,52 @@ require_once("includes/db.php");
                 <div class="card">
                   <div class="card-header">
                     <h4>ALL REQUESTS</h4>
+                    <!-- <div class="modal fade" id="readMessage"  role="dialog" aria-labelledby="formModal"
+                          aria-hidden="true">
+                          <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h5 class="modal-title" id="formModal">Modal title</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                              </div>
+                              <div class="modal-body">
+                                <form class="">
+                                  <div class="form-group">
+                                    <label>Username</label>
+                                    <div class="input-group">
+                                      <div class="input-group-prepend">
+                                        <div class="input-group-text">
+                                          <i class="fas fa-envelope"></i>
+                                        </div>
+                                      </div>
+                                      <input type="text" class="form-control" placeholder="Email" name="email">
+                                    </div>
+                                  </div>
+                                  <div class="form-group">
+                                    <label>Password</label>
+                                    <div class="input-group">
+                                      <div class="input-group-prepend">
+                                        <div class="input-group-text">
+                                          <i class="fas fa-lock"></i>
+                                        </div>
+                                      </div>
+                                      <input type="password" class="form-control" placeholder="Password" name="password">
+                                    </div>
+                                  </div>
+                                  <div class="form-group mb-0">
+                                    <div class="custom-control custom-checkbox">
+                                      <input type="checkbox" name="remember" class="custom-control-input" id="remember-me">
+                                      <label class="custom-control-label" for="remember-me">Remember Me</label>
+                                    </div>
+                                  </div>
+                                  <button type="button" class="btn btn-primary m-t-15 waves-effect">LOGIN</button>
+                                </form>
+                              </div>
+                            </div>
+                          </div>
+                        </div> -->
                   </div>
                   <div class="card-body">
                     <div class="table-responsive">

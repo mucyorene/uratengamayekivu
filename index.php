@@ -72,7 +72,7 @@
 					<form class="form" role="form" autocomplete="off" method="POST">
 						<div class="form-group">
 							<div class="default-select" id="default-select">
-								<select name="carId">
+								<select name="carId" required>
 									<option value="" disabled selected hidden>Select Your Car</option>
 									<?php
 										$select = mysqli_query($conn,"SELECT *FROM car_rent") or die(mysqli_error($conn));
@@ -87,7 +87,7 @@
 						</div>
 						<div class="form-group">
 							<div class="default-select" id="default-select">
-								<select name="drivingType">
+								<select name="drivingType" required>
 									<option value="" disabled selected hidden>Self drive?</option>
 									<option value="yes">Self Driver</option>
 									<option value="no">With Driver</option>
@@ -97,7 +97,7 @@
 						<div class="form-group row">
 							<div class="col-md-6 wrap-left">
 								<div class="default-select" id="default-select">
-									<select name="noPickups">
+									<select name="noPickups" required>
 										<option value="" disabled selected hidden>Pickup</option>
 										<option value="Pickup One">Pickup One</option>
 										<option value="Pickup Two">Pickup Two</option>
@@ -117,9 +117,9 @@
 						</div>
 													
 						<div class="from-group">
-							<input class="form-control txt-field" type="text" name="name" placeholder="Your name">
-							<input class="form-control txt-field" type="email" name="email" placeholder="Email address">
-							<input class="form-control txt-field" type="tel" name="phone" placeholder="Phone number">
+							<input class="form-control txt-field" required type="text" name="name" placeholder="Your name">
+							<input class="form-control txt-field" required type="email" name="email" placeholder="Email address">
+							<input class="form-control txt-field" required type="tel" name="phone" placeholder="Phone number">
 						</div>
 						<div class="form-group row">
 							<div class="col-md-12">
@@ -143,8 +143,8 @@
 				echo "<script>alert('This booking already done')</script>";
 			 }else{
 					$saveAirPBookings = mysqli_query($conn,"INSERT INTO airportservices 
-				(id,carId,driveType,numberOfpickups,picDate,names,email,phoneNumber,bookingNumber) VALUES
-				('','$a','$b','$c','$d','$e','$f','$g','$h')") or die(mysqli_error($conn));
+				(id,carId,driveType,numberOfpickups,picDate,names,email,phoneNumber,bookingNumber,status1) VALUES
+				('','$a','$b','$c','$d','$e','$f','$g','$h','unread')") or die(mysqli_error($conn));
 				if ($saveAirPBookings) {
 					echo "<script>alert('Thank you for booking your booking codes is: ".$h."')</script>";
 					# code...

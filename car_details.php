@@ -198,8 +198,9 @@
                                             
                                             <div class="qty-btn_area">
                                                 <ul>
-                                                    <li><a class="qty-cart_btn" title="Book this car" href="book_car?idSent=<?= $id;?>" data-toggle="tooltip">Book now</a></li>
-                                                    <li><a class="qty-wishlist_btn" href="wishlist.html" data-toggle="tooltip" title="Add To Wishlist"><i class="ion-android-favorite-outline"></i></a>
+                                                    <li><a class="qty-cart_btn" title="Book this car" href="book_car?idSent=<?= $row['carId'] ?>" data-toggle="tooltip">Book now</a></li>
+                                                    <!-- <li><button class="btn btn-success" value="" title="Book this car" href="#" id="books" data-toggle="tooltip">Book now</button></li> -->
+                                                    <!-- <li><a class="qty-wishlist_btn" href="wishlist.html" data-toggle="tooltip" title="Add To Wishlist"><i class="ion-android-favorite-outline"></i></a> -->
                                                     </li>
                                                     
                                                 </ul>
@@ -235,10 +236,68 @@
                                             </div>
                                         </div>
                                     </div>
+                                    
+                                    <div class="col-md-4 col-lg-4">
+                                        <!-- <form>
+                                            <div class="card-body">
+                                                <div class="form-group">
+                                                    <div class="input-group dates-wrap">                                          
+                                                        <input id="datepicker" name="dateToPick" class="dates form-control" id="exampleAmount" placeholder="Date & time" type="text">                        
+                                                        <div class="input-group-prepend">
+                                                            <span  class="input-group-text"><span class="lnr lnr-calendar-full"></span></span>
+                                                        </div>											
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <div class="col-md-3">
+                                                        <label>Your Names</label> 
+                                                    </div>
+                                                    <div class="col-md-9">
+                                                        <input type="text" name="names" class="form-control" required=""> 
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <div class="col-md-3">
+                                                        <label>Email</label> 
+                                                    </div>
+                                                    <div class="col-md-9">
+                                                        <input type="email" name="email" class="form-control" required=""> 
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <div class="col-md-3">
+                                                        <label>Phone</label> 
+                                                    </div>
+                                                    <div class="col-md-9">
+                                                        <input type="text" name="phone" class="form-control" required=""> 
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <div class="col-md-3">
+                                                        <label>Home Address</label> 
+                                                    </div>
+                                                    <div class="col-md-9">
+                                                        <input type="text" class="form-control" required=""> 
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <div class="col-md-3">
+                                                        <label>Street Number</label> 
+                                                    </div>
+                                                    <div class="col-md-9">
+                                                        <input type="text" class="form-control" required=""> 
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="card-footer text-right">
+                                                        <button class="btn btn-success">Confirm Booking</button>
+                                                    </div>
+                                                </div>
+                                            </div>
 
-                                    <!-- <div class="col-md-4 col-lg-4">
-                                        Booking
-                                    </div> -->
+                                        </form> -->
+                                        <!-- <span class="loadBookingForm"></span> -->
+                                    </div>
                                 <?php
                             }else{
                                 echo "<h2>No car to rend available</h2>";
@@ -486,28 +545,37 @@
 <script src="assets/js/plugins/plugins.min.js"></script>
 -->
 
-        <!-- Main JS -->
-            <script src="assets/js/main.js"></script>
-            <script src="js/vendor/jquery-2.2.4.min.js"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-            <script src="js/vendor/bootstrap.min.js"></script>          
-            <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>
-            <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>          
-            <script src="js/easing.min.js"></script>            
-            <script src="js/hoverIntent.js"></script>
-            <script src="js/superfish.min.js"></script> 
-            <script src="js/jquery.ajaxchimp.min.js"></script>
-            <script src="js/jquery.magnific-popup.min.js"></script> 
-            <script src="js/owl.carousel.min.js"></script>          
-            <script src="js/jquery.sticky.js"></script>
-            <script src="js/jquery.nice-select.min.js"></script>    
-            <script src="js/waypoints.min.js"></script>
-            <script src="js/jquery.counterup.min.js"></script>                  
-            <script src="js/parallax.min.js"></script>      
-            <script src="js/mail-script.js"></script>   
-            <script src="js/main.js"></script>  
+    <!-- Main JS -->
+        <script src="assets/js/main.js"></script>
+        <!-- <script src="js/vendor/jquery-2.2.4.min.js"></script> -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="js/vendor/bootstrap.min.js"></script>          
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>          
+        <script src="js/easing.min.js"></script>            
+        <script src="js/hoverIntent.js"></script>
+        <script src="js/superfish.min.js"></script> 
+        <script src="js/jquery.ajaxchimp.min.js"></script>
+        <script src="js/jquery.magnific-popup.min.js"></script> 
+        <script src="js/owl.carousel.min.js"></script>          
+        <script src="js/jquery.sticky.js"></script>
+        <script src="js/jquery.nice-select.min.js"></script>    
+        <script src="js/waypoints.min.js"></script>
+        <script src="js/jquery.counterup.min.js"></script>                  
+        <script src="js/parallax.min.js"></script>      
+        <script src="js/mail-script.js"></script>   
+        <script src="js/main.js"></script>  
 
 </body>
 
-
 </html>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#books").click(function(){
+            var idss = $(this).val();
+            //alert(idss);
+            $(".loadBookingForm").load('bookingForm.php?idBookCar='+idss);
+        });
+        
+    });
+</script>
