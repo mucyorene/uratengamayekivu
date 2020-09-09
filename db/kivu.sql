@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 09, 2020 at 08:59 PM
+-- Generation Time: Sep 09, 2020 at 11:48 PM
 -- Server version: 10.1.26-MariaDB
 -- PHP Version: 7.1.8
 
@@ -61,14 +61,6 @@ CREATE TABLE `airportservices` (
   `status1` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `airportservices`
---
-
-INSERT INTO `airportservices` (`id`, `carId`, `driveType`, `numberOfpickups`, `picDate`, `names`, `email`, `phoneNumber`, `bookingNumber`, `status1`) VALUES
-(2, 19, 'no', 'Pickup Three', '03/08/2021', 'Rene MUCYO TUYISENGE', 'renemucyomucici@gmail.com', '0784494820', '#19078449482003/08/2021', 'unread'),
-(3, 19, 'yes', 'Pickup Two', '30/3/2021', 'Kangabe', 'carine@gmail.com', '034344', '#1903434430/3/2021', 'read');
-
 -- --------------------------------------------------------
 
 --
@@ -93,7 +85,8 @@ CREATE TABLE `carrentbookings` (
 --
 
 INSERT INTO `carrentbookings` (`id`, `datePickedUp`, `names`, `email`, `phoneNumber`, `hNumber`, `streetNumber`, `bookingCode`, `carId`, `status1`) VALUES
-(7, '09/30/2020', 'Rene MUCYO TUYISENGE', 'renemucyomucici@gmail.com', '0784494820', 'INTWALI', 'KK 190 AV', '#2209/30/20200784494820', 22, 'unread');
+(9, '09/16/2020', 'Kamanzi Yves', 'tuyishimeserge@gmail.com', '1 1997 8 0010624 0 00', 'Kigali rwanda', '52', '#2709/16/20201 1997 8 0010624 0 00', 27, 'unread'),
+(10, '09/16/2020', 'Kamanzi Yves', 'boysonserge@gmail.com', '07801332', 'Kigali rwanda', '05', '#2709/16/202007801332', 27, 'unread');
 
 -- --------------------------------------------------------
 
@@ -125,15 +118,11 @@ CREATE TABLE `car_rent` (
 --
 
 INSERT INTO `car_rent` (`carId`, `carName`, `carTransimission`, `carAirCondition`, `carSeats`, `kmPerLitre`, `doors`, `fuelType`, `carPrice`, `carType`, `carDesc`, `trucks`, `thumbnail`, `photo1`, `photo2`, `photo3`) VALUES
-(14, 'Corolla Altis', 'Manual', 'Yes', 4, 213, 10, 'Fuel', 12300, 'Small', 'Yes small car altis', '', '5f574c1166d61.jpg', '5f574c1166d72.jpg', '5f574c1166d79.jpg', '5f574c1166d7e.jpg'),
-(15, 'COROLLA Verso 2002 Voiture', 'Manual', 'No', 5, 130, 4, 'Fuel', 0, 'Small', 'Yes corolla small car', '', '5f574d76b2b2e.jpg', '5f574d76b2b34.jpg', '5f574d76b2b35.jpg', '5f574d76b2b37.jpg'),
-(16, 'Honda crv', 'Automatic', 'Yes', 8, 70, 6, 'Fuel', 60000, 'Large', 'Yes Honda Amerca', '', '5f574df578b32.jpg', '5f574df578b38.jpg', '5f574df578b3a.jfif', '5f574df578b3b.jpg'),
-(17, 'Hyundai Tucson', 'Automatic', 'Yes', 5, 95, 5, 'Diesel', 65000, 'Medium', 'Yes Rwanda medium Hundai', '', '5f574ee5c76eb.jpg', '5f574ee5c76f1.jpg', '5f574ee5c76f3.jpg', '5f574ee5c76f5.jpg'),
-(18, 'RAVA 4 Dark Blue', 'Automatic', 'Yes', 5, 70, 6, 'Fuel', 124324, 'Medium', 'Yes Rava 4 Dark blue rav4_dark_blue', '', '5f574f6a6a2b6.jpg', '5f574f6a6a2bd.jpg', '5f574f6a6a2be.jpg', '5f574f6a6a2c0.jpg'),
-(19, 'Land Cruiser V8', 'Manual', 'Yes', 5, 150, 5, 'Diesel', 0, 'Large', 'land_cruiser_v8', '', '5f57510263a6c.jpg', '5f57510263a76.jpg', '5f57510263a79.jpg', '5f57510263a7c.jpg'),
-(20, 'TXL', 'Automatic', 'Yes', 5, 70, 5, 'Diesel', 60000, 'Large', 'TXL kayumba', '', '5f5751646703e.jpg', '5f57516467044.jpg', '5f57516467046.jpg', '5f57516467047.jpg'),
-(21, 'RAV4 2004 SILVER', 'Automatic', 'No', 4, 130, 5, 'Fuel', 12500, 'Vans And Trucks', 'Kiyovu Yetu RAV4_2004_SILVER', '', '5f5751e7aaa68.jpg', '5f5751e7aaa6d.jpg', '5f5751e7aaa6f.jpg', '5f5751e7aaa70.jpg'),
-(22, 'RAVA 2007 BLUE', 'Automatic', 'Yes', 5, 139, 5, 'Diesel', 90000, 'Premium', 'RAVA 2007 BLUE RAYON', '', '5f5752d6082eb.jpg', '5f5752d6082f1.jpg', '5f5752d6082f3.jpg', '5f5752d6082f5.jpg');
+(23, 'Corolla altis', 'Automatic', 'Yes', 4, 2, 4, 'Fuel', 30, 'Small', 'Very good voiture ', '', '5f594363e73cd.jpg', '5f594363e73d5.jpg', '5f594363e73d7.jpg', '5f594363e73d9.jpg'),
+(24, 'Corolla Verso', 'Manual', 'Yes', 4, 3, 4, 'Fuel', 30, 'Small', 'Very good corolla verso for travelling with your fam', '', '5f5944cf933dc.jpg', '5f5944cf933e0.jpg', '5f5944cf933e1.jpg', '5f5944cf933e2.jpg'),
+(25, 'Honda crv', 'Manual', 'Yes', 5, 2, 4, 'Diesel', 35, 'Medium', 'Good conditioned Honda for travel', '', '5f59463fa4196.jpg', '5f59463fa419c.jpg', '5f59463fa419e.jpg', '5f59463fa419f.jpg'),
+(26, 'TXL ', 'Automatic', 'Yes', 8, 5, 4, 'Diesel', 60, 'Large', 'VIP Car ', '', '5f59484dc1cc7.jpg', '5f59484dc1ccb.jpg', '5f59484dc1ccc.jpg', '5f59484dc1ccd.jpg'),
+(27, 'V8', 'Automatic', 'Yes', 9, 4, 4, 'Fuel', 65, 'Premium', 'VIP GOOD CAR ', '', '5f594959beb38.jpg', '5f594959beb44.jpg', '5f594959beb45.jpg', '5f594959beb47.jpg');
 
 -- --------------------------------------------------------
 
@@ -213,12 +202,12 @@ ALTER TABLE `airportservices`
 -- AUTO_INCREMENT for table `carrentbookings`
 --
 ALTER TABLE `carrentbookings`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT for table `car_rent`
 --
 ALTER TABLE `car_rent`
-  MODIFY `carId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `carId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 --
 -- AUTO_INCREMENT for table `contact`
 --

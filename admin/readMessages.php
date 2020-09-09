@@ -41,6 +41,7 @@
                     <div id="mail-nav">
                       <ul class="" id="mail-folders">
                         <li>
+<<<<<<< HEAD
                           <a href="allMessages" title="Inbox">Contact Messages &nbsp;
                               <?php
                                 $fi = mysqli_query($conn,"SELECT *FROM contact WHERE status1='unread'") or die(mysqli_error($conn));
@@ -49,6 +50,9 @@
                                     echo $num;
                                 }
                               ?>
+=======
+                          <a href="" title="Inbox">Contact Messages (10)
+>>>>>>> d0c81d00263ac5c34d644245fa5382d95468577e
                           </a>
                         </li>
                         <!-- <li>
