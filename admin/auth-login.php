@@ -19,7 +19,7 @@
 </head>
 
 <body>
-  <?php include 'includes/login-check.php'; ?>
+  <?php include 'includes/login-check.php';?>
   <div class="loader"></div>
   <div id="app">
     <section class="section">
@@ -83,7 +83,7 @@
               </div>
             </div>
             <div class="mt-5 text-muted text-center">
-              Don't have an account? <a href="auth-register.html">Create One</a>
+              <!-- Don't have an account? <a href="auth-register.html">Create One</a> -->
             </div>
           </div>
         </div>

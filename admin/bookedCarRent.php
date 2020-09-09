@@ -1,5 +1,16 @@
 <?php
 require_once("includes/db.php");
+if (!empty($_GET['idNoti'])) {
+  $id = $_GET['idNoti'];
+  echo "<script>alert(".$id.")</script>";
+  // die();
+  $up1 = mysqli_query($conn,"UPDATE carrentbookings SET status1='read' WHERE id='$id'") or die(mysqli_error($conn));
+    if ($up1) {
+      # code...
+      header("location:bookedCarRent.php");
+    }
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

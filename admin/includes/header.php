@@ -60,7 +60,6 @@
                         <a href="readMessages?id=<?= $message['id']?>" class="dropdown-item dropdown-item-unread" data-toggle="tooltip" 
                           data-placement="top" title="<?php echo $message['message']?>"> 
                           <span class="dropdown-item-avatar text-white">
-                              <!-- <img alt="image" src="assets/img/blog/img03.png" class="rounded-circle"> -->
                               <img alt="image" src="assets/img/user.png" class="rounded-circle">
                           </span>
                           <span class="dropdown-item-desc">
@@ -73,10 +72,6 @@
                             <span class="time">2 Days Ago</span>
                           </span>
                         </a>
-                        <!-- <button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover"
-                          data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
-                          On top
-                        </button> -->
                       <?php
                     }
                   }
@@ -114,9 +109,13 @@
                 <span class="badge headerBadge1">
                   <?php
                     $se = mysqli_query($conn,"SELECT *FROM airportservices WHERE status1 = 'unread' ORDER BY id DESC") or die(mysqli_error($conn));
-                    if (mysqli_num_rows($se)>0) {
+                    $se1 = mysqli_query($conn,"SELECT *FROM carrentbookings WHERE status1 = 'unread' ORDER BY id DESC") or die(mysqli_error($conn));
+                    if ((mysqli_num_rows($se)>0) || (mysqli_num_rows($se1)>0)) {
                       $number = mysqli_num_rows($se);
-                    echo $number;
+                      $number2 = mysqli_num_rows($se1);
+                      // echo "<script>alert('".$number2."')</script>";
+                      $total = $number+$number2;
+                    echo $total;
                     }else{
                       echo "0";
                     }
@@ -127,38 +126,63 @@
               <div class="dropdown-header">
                 Notifications
                 <div class="float-right">
-                  <a href="#">Mark All As Read</a>
+                  <!-- <a href="#">Mark All As Read</a> -->
                 </div>
               </div>
               <div class="dropdown-list-content dropdown-list-icons">
                 <?php
                     $notif = mysqli_query($conn,"SELECT *FROM airportservices WHERE status1 = 'unread' ORDER BY id DESC") or die(mysqli_error($conn));
-                    if (mysqli_num_rows($notif)>0) {
-                      // $number = mysqli_num_rows($se);
+                    $notif2 = mysqli_query($conn,"SELECT *FROM carrentbookings WHERE status1 = 'unread' ORDER BY id DESC") or die(mysqli_error($conn));
+                    if ((mysqli_num_rows($notif)>0) || (mysqli_num_rows($notif2)>0)) {
                     while ($noti = mysqli_fetch_array($notif)) {
                       ?>
-                      <a href="#" class="dropdown-item dropdown-item-unread">
+                      <a href="airportTaxSer" class="dropdown-item dropdown-item-unread">
                         <span class="dropdown-item-icon bg-primary text-white">
-                          <i class="fa fa-code"></i>
+                          <i class="fas fa-code"></i>
                         </span>
-                        <span class="dropdown-item-desc"><b><?= $noti['names']?></b><br>Sent you a message
+                        <span class="dropdown-item-desc"><b><?= $noti['names']?></b><br><b>New airport services booking</b>
                           <span class="time">2 Min Ago</span>
                         </span>
                       </a> 
                       <?php
                     }
+                    while($noti2 = mysqli_fetch_array($notif2)){
+                      ?>
+                        <a href="bookedCarRent?idNoti=<?= $noti2['id'];?>" class="dropdown-item dropdown-item-unread">
+                          <span class="dropdown-item-icon bg-primary text-white">
+                            <i class="fas fa-code"></i>
+                          </span>
+                          <span class="dropdown-item-desc"><b><?= $noti2['names']?></b><br><b>New Car rent booking</b>
+                            <span class="time">2 Min Ago</span>
+                          </span>
+                        </a>
+                      <?php
                     }
+                  }
                 ?>
                 <?php
                   $notif1 = mysqli_query($conn,"SELECT *FROM airportservices WHERE status1='read' ORDER BY id DESC") or die(mysqli_error($conn));
-                  if (mysqli_num_rows($notif)>0) {
+                  $notif3 = mysqli_query($conn,"SELECT *FROM carrentbookings WHERE status1='read' ORDER BY id DESC") or die(mysqli_error($conn));
+                  if ((mysqli_num_rows($notif)>0) || (mysqli_num_rows($notif3)>0)) {
                     while ($noti1=mysqli_fetch_array($notif1)) {
                       ?>
-                        <a href="#" class="dropdown-item">
+                        <a href="airportTaxSer" class="dropdown-item">
                           <span class="dropdown-item-icon bg-info text-white">
                             <i class="fa fa-user"></i>
                           </span>
-                          <span class="dropdown-item-desc"> <b><?= $noti1['names']?></b> contacted you <span class="time">10 Hours
+                          <span class="dropdown-item-desc"> <b><?= $noti1['names']?></b> <br>Booked from car for rent <span class="time">10 Hours
+                              Ago</span>
+                          </span>
+                        </a>
+                      <?php
+                    }
+                    while ($noti3 = mysqli_fetch_array($notif3)) {
+                      ?>
+                        <a href="bookedCarForRent" class="dropdown-item">
+                          <span class="dropdown-item-icon bg-info text-white">
+                            <i class="fa fa-user"></i>
+                          </span>
+                          <span class="dropdown-item-desc"> <b><?= $noti1['names']?></b> Booked from car for rent <span class="time">10 Hours
                               Ago</span>
                           </span>
                         </a>
@@ -189,12 +213,12 @@
                   </span>
                 </a> -->
               </div>
-              <div class="dropdown-footer text-center">
+              <!-- <div class="dropdown-footer text-center">
                 <a href="#">View All <i class="fas fa-chevron-right"></i></a>
-              </div>
+              </div> -->
             </div>
           </li>
-          <li class="dropdown">
+          <li class="dropdown dropdown-list-toggle">
             <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
               <img alt="image" src="assets/img/blog/img01.png" class="user-img-radious-style"><span class="d-sm-none d-lg-inline-block"></span>
             </a>
@@ -203,10 +227,10 @@
               <a href="profiles" class="dropdown-item has-icon">
                 <i class="far fa-user"></i> Profile
               </a>
-              <a href="timeline.html" class="dropdown-item has-icon">
+              <!-- <a href="timeline.html" class="dropdown-item has-icon">
                 <i class="fas fa-bolt"></i>
                 Activities
-              </a>
+              </a> -->
               <a href="#" class="dropdown-item has-icon">
                 <i class="fas fa-cog"></i>
                 Settings

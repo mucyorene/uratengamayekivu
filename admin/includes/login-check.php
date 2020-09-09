@@ -12,10 +12,12 @@ if (isset($_POST['login'])) {
 		header("location: index.php");
 
 	}else{
-		?><script>
+		?>
+		<script>
 			swal('Oops!', 'Incorrent username or password!', 'error');
 		</script>
-	<?php }} ?>
-
- ?>
+	<?php 
+		}
+	} 
+	?>
 

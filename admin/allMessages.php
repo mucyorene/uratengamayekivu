@@ -38,11 +38,12 @@
                     <div id="mail-nav">
                       <ul class="" id="mail-folders">
                         <li>
-                          <a href="" title="Inbox">Contact Messages<?php
+                          <a href="" title="Inbox">Contact Messages &nbsp;
+                              <?php
                                 $fi = mysqli_query($conn,"SELECT *FROM contact WHERE status1='unread'") or die(mysqli_error($conn));
                                 if (mysqli_num_rows($fi)>0) {
                                     $num = mysqli_num_rows($fi);
-                                    echo $num;
+                                    echo "<b>".$num."</b>";
                                 }
                               ?>
                           </a>
@@ -76,6 +77,7 @@
                                     </th>
                                     <th>Names</th>
                                     <th>Subject</th>
+                                    <th>Date</th>
                                     <th class="hidden-xs" colspan="2">
                                     <div class="pull-right">
                                         <div class="email-btn-group m-l-15">
@@ -94,7 +96,7 @@
                             </thead>
                             <tbody>
                                 <?php
-                                    $q = mysqli_query($conn,"SELECT *FROM contact") or die(mysqli_error($conn));
+                                    $q = mysqli_query($conn,"SELECT *FROM contact ORDER BY id DESC") or die(mysqli_error($conn));
                                     if (mysqli_num_rows($q)>0) {
                                         $count = 1;
                                         while ($fe = mysqli_fetch_array($q)) {

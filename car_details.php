@@ -198,7 +198,10 @@
                                             
                                             <div class="qty-btn_area">
                                                 <ul>
-                                                    <li><a class="qty-cart_btn" title="Book this car" href="book_car?idSent=<?= $row['carId'] ?>" data-toggle="tooltip">Book now</a></li>
+                                                    <li>
+                                                        <a href="book_car?idSent=<?= $row['carId']; ?>" data-placement="top" class="qty-cart_btn" title="Book this car" data-toggle="tooltip">Book now</a>
+                                                        
+                                                    </li>
                                                     <!-- <li><button class="btn btn-success" value="" title="Book this car" href="#" id="books" data-toggle="tooltip">Book now</button></li> -->
                                                     <!-- <li><a class="qty-wishlist_btn" href="wishlist.html" data-toggle="tooltip" title="Add To Wishlist"><i class="ion-android-favorite-outline"></i></a> -->
                                                     </li>

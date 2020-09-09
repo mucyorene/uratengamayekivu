@@ -38,95 +38,7 @@ $id = $_GET['editCar'];
         <section class="section">
           <div class="section-body">
             <div class="row">
-              <!-- <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                <div class="card">
-                  <div class="card-statistic-4">
-                    <div class="align-items-center justify-content-between">
-                      <div class="row ">
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr-0 pt-3">
-                          <div class="card-content">
-                            <h5 class="font-15">New Booking</h5>
-                            <h2 class="mb-3 font-18">258</h2>
-                            <p class="mb-0"><span class="col-green">10%</span> Increase</p>
-                          </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl-0">
-                          <div class="banner-img">
-                            <img src="assets/img/banner/1.png" alt="">
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                <div class="card">
-                  <div class="card-statistic-4">
-                    <div class="align-items-center justify-content-between">
-                      <div class="row ">
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr-0 pt-3">
-                          <div class="card-content">
-                            <h5 class="font-15"> Customers</h5>
-                            <h2 class="mb-3 font-18">1,287</h2>
-                            <p class="mb-0"><span class="col-orange">09%</span> Decrease</p>
-                          </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl-0">
-                          <div class="banner-img">
-                            <img src="assets/img/banner/2.png" alt="">
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                <div class="card">
-                  <div class="card-statistic-4">
-                    <div class="align-items-center justify-content-between">
-                      <div class="row ">
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr-0 pt-3">
-                          <div class="card-content">
-                            <h5 class="font-15">New Project</h5>
-                            <h2 class="mb-3 font-18">128</h2>
-                            <p class="mb-0"><span class="col-green">18%</span>
-                              Increase</p>
-                          </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl-0">
-                          <div class="banner-img">
-                            <img src="assets/img/banner/3.png" alt="">
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12">
-              <div class="card">
-                <div class="card-statistic-4">
-                  <div class="align-items-center justify-content-between">
-                    <div class="row ">
-                      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr-0 pt-3">
-                        <div class="card-content">
-                          <h5 class="font-15">Revenue</h5>
-                          <h2 class="mb-3 font-18">$48,697</h2>
-                          <p class="mb-0"><span class="col-green">42%</span> Increase</p>
-                        </div>
-                      </div>
-                      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl-0">
-                        <div class="banner-img">
-                          <img src="assets/img/banner/4.png" alt="">
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div> -->
+
               <div class="col-sm-12 col-md-12 col-lg-12">
                 <div class="card">
                   <div class="card-header">
@@ -272,16 +184,6 @@ $id = $_GET['editCar'];
                                             <label class="custom-file-label" for="customFile">Choose file</label>
                                         </div>
                                         <br><br>
-                                        <div class="custom-file">
-                                            <input type="file" name="photo4" class="custom-file-input" id="customFile">
-                                            <label class="custom-file-label" for="customFile">Choose file</label>
-                                        </div>
-                                        <br><br>
-                                        <div class="custom-file">
-                                            <input type="file" name="photo5" class="custom-file-input" id="customFile">
-                                            <label class="custom-file-label" for="customFile">Choose file</label>
-                                        </div>
-                                        <br><br>
                                         
                                         <div class="form-group">
                                             <button type="submit" name="updateCar" class="btn btn-icon icon-left btn-outline-primary"><i class="fas fa-check"></i> Edit</a>
@@ -312,19 +214,32 @@ $id = $_GET['editCar'];
           $f = mysqli_real_escape_string($conn,$_POST['car_fuel']);  
           $g = mysqli_real_escape_string($conn,$_POST['price']);
           $h = mysqli_real_escape_string($conn,$_POST['car_type']);          
-          $i = mysqli_real_escape_string($conn,$_POST['description']);          
-          $j = mysqli_real_escape_string($conn,$_FILES['thumbs']["name"]);
-          $k = mysqli_real_escape_string($conn,$_FILES['photo1']["name"]);          
-          $l = mysqli_real_escape_string($conn,$_FILES['photo2']["name"]);          
-          $m = mysqli_real_escape_string($conn,$_FILES['photo3']["name"]);          
-          $n = mysqli_real_escape_string($conn,$_FILES['photo4']["name"]);          
-          $o = mysqli_real_escape_string($conn,$_FILES['photo5']["name"]);
+          $i = mysqli_real_escape_string($conn,$_POST['description']);
 
-          if (empty($j) && empty($k) && empty($l) && empty($m) && empty($n) && empty($o)) {
-            $query = mysqli_query($conn,"UPDATE car_rent SET
+          //images
+
+          $tj = mysqli_real_escape_string($conn,$_FILES['thumbs']["name"]);
+          $tk = mysqli_real_escape_string($conn,$_FILES['photo1']["name"]);          
+          $tl = mysqli_real_escape_string($conn,$_FILES['photo2']["name"]);          
+          $tm = mysqli_real_escape_string($conn,$_FILES['photo3']["name"]);
+
+          $ext = explode(".",$tj);
+          $ext1 = explode(".",$tk);
+          $ext2 = explode(".",$tl);
+          $ext3 = explode(".",$tm);
+          
+          $j = uniqid().".".$ext[1];
+          $k = uniqid().".".$ext1[1];
+          $l = uniqid().".".$ext2[1];
+          $m = uniqid().".".$ext3[1];
+
+          if (empty($tj) && empty($tk) && empty($tl) && empty($tm)) {
+            $query1 = mysqli_query($conn,"UPDATE car_rent SET
             carName='$a',carTransimission='$b',carAirCondition='$c',carSeats='$d',kmPerLitre='$p',doors='$e',fuelType='$f',
             carPrice='$g',carType='$h',carDesc='$i' WHERE carId = '$id'")or die(mysqli_error($conn));
-            if ($query) {
+            if ($query1) {
+              // echo "<script>alert('hELLO')</script>";
+              // die();
               echo "<script>window.location = 'rentCars.php';</script>";
               # code...
             }
@@ -332,15 +247,13 @@ $id = $_GET['editCar'];
           }else{
             $query = mysqli_query($conn,"UPDATE car_rent SET
             carName='$a',carTransimission='$b',carAirCondition='$c',carSeats='$d',kmPerLitre='$p',doors='$e',fuelType='$f',
-            carPrice='$g',carType='$h',carDesc='$i',thumbnail='$j',photo1='$k',photo2='$l',photo3='$m',photo4='$n',photo5='$o'
+            carPrice='$g',carType='$h',carDesc='$i',thumbnail='$j',photo1='$k',photo2='$l',photo3='$m'
             WHERE carId = '$id'")or die(mysqli_error($conn));
           if ($query) {
             move_uploaded_file($_FILES['thumbs']["tmp_name"],"media/imagesRent/".$j);
             move_uploaded_file($_FILES['photo1']["tmp_name"],"media/imagesRent/".$k);
             move_uploaded_file($_FILES['photo2']["tmp_name"],"media/imagesRent/".$l);
-            move_uploaded_file($_FILES['photo3']["tmp_name"],"media/imagesRent/".$m);
-            move_uploaded_file($_FILES['photo4']["tmp_name"],"media/imagesRent/".$n);
-            move_uploaded_file($_FILES['photo5']["tmp_name"],"media/imagesRent/".$o);                        
+            move_uploaded_file($_FILES['photo3']["tmp_name"],"media/imagesRent/".$m);                       
             echo "<script>window.location = 'rentCars.php';</script>";
           }
           }
