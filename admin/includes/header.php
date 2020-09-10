@@ -33,7 +33,7 @@
               <i data-feather="mail"></i>
               <span class="badge headerBadge1">
                 <?php
-                  $se = mysqli_query($conn,"SELECT *FROM contact WHERE status1='unread' ORDER BY id DESC") or die(mysqli_error($conn));
+                  $se = mysqli_query($conn,"SELECT *FROM contact WHERE status1='unread'") or die(mysqli_error($conn));
                   if (mysqli_num_rows($se)>0) {
                 
                     $number = mysqli_num_rows($se);
