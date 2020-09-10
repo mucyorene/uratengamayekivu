@@ -37,7 +37,7 @@
                   if (mysqli_num_rows($se)>0) {
                 
                     $number = mysqli_num_rows($se);
-                  echo $number;
+                    echo $number;
                   }else{
                     echo "0";
                   }
