@@ -41,7 +41,6 @@
                     <div id="mail-nav">
                       <ul class="" id="mail-folders">
                         <li>
-<<<<<<< HEAD
                           <a href="allMessages" title="Inbox">Contact Messages &nbsp;
                               <?php
                                 $fi = mysqli_query($conn,"SELECT *FROM contact WHERE status1='unread'") or die(mysqli_error($conn));
@@ -50,9 +49,6 @@
                                     echo $num;
                                 }
                               ?>
-=======
-                          <a href="" title="Inbox">Contact Messages (10)
->>>>>>> d0c81d00263ac5c34d644245fa5382d95468577e
                           </a>
                         </li>
                         <!-- <li>
@@ -77,7 +73,8 @@
                 <?php 
                     $query = mysqli_query($conn,"SELECT *FROM contact WHERE id='$id'") or die(mysqli_error($conn));
                     if (mysqli_num_rows($query)>0) {
-                        $update = mysqli_query($conn,"UPDATE contact SET status1='read' WHERE id='$id");
+                        $update = mysqli_query($conn,"UPDATE contact SET status1='read' WHERE id ='$id'") or die(mysqli_error($conn));
+                        
                         $con = mysqli_fetch_array($query);
                             ?>
 
