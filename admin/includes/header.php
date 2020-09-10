@@ -35,7 +35,6 @@
                 <?php
                   $se = mysqli_query($conn,"SELECT *FROM contact WHERE status1='unread'") or die(mysqli_error($conn));
                   if (mysqli_num_rows($se)>0) {
-                
                     $number = mysqli_num_rows($se);
                     echo $number;
                   }else{
